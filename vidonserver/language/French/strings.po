@@ -1,0 +1,449 @@
+﻿# VidOn.me Media Server language file
+msgid ""
+msgstr ""
+"Project-Id-Version: VidOn.me Media Server\n"
+"Report-Msgid-Bugs-To: http://www.vidonme.com/\n"
+"POT-Creation-Date: 2012-05-04 12:46+0000\n"
+"PO-Revision-Date: 2012-05-28 22:49+0000\n"
+"Last-Translator: VidOn Server Translation Team\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#001"
+msgid "OK"
+msgstr "OK"
+
+msgctxt "#002"
+msgid "Cancel"
+msgstr "Annuler"
+
+msgctxt "#003"
+msgid "Download"
+msgstr "Télécharger"
+
+msgctxt "#004"
+msgid "Background"
+msgstr "Télécharger au fond"
+
+msgctxt "#005"
+msgid "Install"
+msgstr "Installer"
+
+msgctxt "#006"
+msgid "Upgrade"
+msgstr "Mettre à jour"
+
+msgctxt "#301"
+msgid "Server Manager..."
+msgstr "Gestion de service…"
+
+msgctxt "#302"
+msgid "Update Library"
+msgstr "Mettre à jour le médiathèque"
+
+msgctxt "#303"
+msgid "Start server on Windows Startup"
+msgstr "Démarrer serveur au démarrage de Windows"
+
+msgctxt "#304"
+msgid "Advance"
+msgstr "Fonctions avancées"
+
+msgctxt "#305"
+msgid "Check for Updates"
+msgstr "Véfirier la mise à jour"
+
+msgctxt "#306"
+msgid "About..."
+msgstr "À propos..."
+
+msgctxt "#307"
+msgid "Quit"
+msgstr "Quitter"
+
+msgctxt "#1001"
+msgid "Current version: "
+msgstr "Version actuelle："
+
+msgctxt "#1002"
+msgid "New version: "
+msgstr "Nouvelle version disponible："
+
+msgctxt "#1003"
+msgid "Current version is already the latest."
+msgstr "La version actuelle est déjà la dernière"
+
+msgctxt "#1004"
+msgid "Downloading new version files, please wait..."
+msgstr "Téléchargement des ficheirs de nouvelle version, veuillez patienter…"
+
+msgctxt "#1005"
+msgid "Download completed, now install? "
+msgstr "Téléchargement terminé, voulez-vous installer maintenant?"
+
+msgctxt "#1006"
+msgid "Update failed, please check your network connection.\r\nYou can download new software straightforwardly on: "
+msgstr "Mise à jour échouée, vérifiez le connexion internet. \r\n Vous pouvez aller au site official de VidOn.me pour télécharger la mise à jour, l’adresse de téléchargement :"
+
+msgctxt "#1007"
+msgid "Program is already running!"
+msgstr "Le programme est déjà en marche !"
+
+msgctxt "#1008"
+msgid "Service started successfully!"
+msgstr "Le service a démarré avec succès !"
+
+msgctxt "#1009"
+msgid "Checking for updates..."
+msgstr "Vérification de mise à jour..."
+
+msgctxt "#1010"
+msgid "Service started successfully!"
+msgstr "Mise à jour de médiathèque..."
+
+msgctxt "#1011"
+msgid "Service updated unsuccessfully!"
+msgstr "Mise à jour de médiathèque échouée !"
+
+msgctxt "#1012"
+msgid "Library updated successfully!"
+msgstr "Mise à jour de médiathèque réussie !"
+
+msgctxt "#1013"
+msgid "Website: "
+msgstr "Site officiel: "
+
+msgctxt "#1014"
+msgid "Forum: "
+msgstr "Forum: "
+
+msgctxt "#1015"
+msgid "Change Log"
+msgstr "Change Log"
+
+msgctxt "#1016"
+msgid "Updater app successfully initiated..."
+msgstr "Mise à jour en exécution..."
+
+msgctxt "#1017"
+msgid "Open the log folder"
+msgstr "Ouvrir le répertoire de log"
+
+msgctxt "#20358"
+msgid "Season %i"
+msgstr "Saison%i"
+
+msgctxt "#20381"
+msgid "Specials"
+msgstr "Spécial"
+
+msgctxt "#40001"
+msgid "English"
+msgstr "Anglais"
+
+msgctxt "#40002"
+msgid "Chinese"
+msgstr "Chinois"
+
+msgctxt "#40003"
+msgid "Mandarin"
+msgstr "Mandarin"
+
+msgctxt "#40004"
+msgid "Putonghua"
+msgstr "Putonghua"
+
+msgctxt "#40005"
+msgid "Yue"
+msgstr "Yue"
+
+msgctxt "#40006"
+msgid "Cantonese"
+msgstr "Cantonais"
+
+msgctxt "#40007"
+msgid "Wu"
+msgstr "Wu"
+
+msgctxt "#40008"
+msgid "Shanghaiese"
+msgstr "Shanghaiese"
+
+msgctxt "#40009"
+msgid "Minbei"
+msgstr "Minbei"
+
+msgctxt "#40010"
+msgid "Fuzhou"
+msgstr "Fuzhou"
+
+msgctxt "#40011"
+msgid "Minnan"
+msgstr "Minnan"
+
+msgctxt "#40012"
+msgid "Hokkien"
+msgstr "Hokkien"
+
+msgctxt "#40013"
+msgid "Taiwanese"
+msgstr "Taïwanais"
+
+msgctxt "#40014"
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgctxt "#40015"
+msgid "Greek"
+msgstr "Grec"
+
+msgctxt "#40016"
+msgid "Albanian"
+msgstr "Albanais"
+
+msgctxt "#40017"
+msgid "Arabic"
+msgstr "Arabe"
+
+msgctxt "#40018"
+msgid "French"
+msgstr "Français"
+
+msgctxt "#40019"
+msgid "Portuguese"
+msgstr "Portugais"
+
+msgctxt "#40020"
+msgid "Italian"
+msgstr "Italien"
+
+msgctxt "#40021"
+msgid "German"
+msgstr "Allemand"
+
+msgctxt "#40022"
+msgid "Armenian"
+msgstr "Arménien"
+
+msgctxt "#40023"
+msgid "Yezidi"
+msgstr "Yézidi"
+
+msgctxt "#40024"
+msgid "Russian"
+msgstr "Russe"
+
+msgctxt "#40025"
+msgid "Slovene"
+msgstr "Slovène"
+
+msgctxt "#40026"
+msgid "Croatian"
+msgstr "Croate"
+
+msgctxt "#40027"
+msgid "Hungarian"
+msgstr "Hongrois"
+
+msgctxt "#40028"
+msgid "Bangla"
+msgstr "Bangladais"
+
+msgctxt "#40029"
+msgid "Belorussian"
+msgstr "Biélorusse"
+
+msgctxt "#40030"
+msgid "Dutch"
+msgstr "Hollandais"
+
+msgctxt "#40031"
+msgid "Mayan"
+msgstr "Maya"
+
+msgctxt "#40032"
+msgid "Malay"
+msgstr "Malaise"
+
+msgctxt "#40033"
+msgid "Bulgarian"
+msgstr "Bulgare"
+
+msgctxt "#40034"
+msgid "Kirund"
+msgstr "Kirundi"
+
+msgctxt "#40035"
+msgid "Khmer"
+msgstr "Khmer"
+
+msgctxt "#40036"
+msgid "Czech"
+msgstr "Tchèque"
+
+msgctxt "#40037"
+msgid "Danish"
+msgstr "Danois"
+
+msgctxt "#40038"
+msgid "Tetum"
+msgstr "Tetum"
+
+msgctxt "#40039"
+msgid "Amharic"
+msgstr "Amharique"
+
+msgctxt "#40040"
+msgid "Finnish"
+msgstr "Finlandais"
+
+msgctxt "#40041"
+msgid "Georgian"
+msgstr "Géorgien"
+
+msgctxt "#40042"
+msgid "Creole"
+msgstr "Créole"
+
+msgctxt "#40043"
+msgid "Magyar"
+msgstr "Magyar"
+
+msgctxt "#40044"
+msgid "Hungarian"
+msgstr "Hongrois"
+
+msgctxt "#40045"
+msgid "Icelandic"
+msgstr "Islandais"
+
+msgctxt "#40046"
+msgid "Hindi"
+msgstr "Hindi"
+
+msgctxt "#40047"
+msgid "Bahasa"
+msgstr "Bahasa"
+
+msgctxt "#40048"
+msgid "Persian"
+msgstr "Persan"
+
+msgctxt "#40049"
+msgid "Hebrew"
+msgstr "Hébreu"
+
+msgctxt "#40050"
+msgid "Japanese"
+msgstr "Japonais"
+
+msgctxt "#40051"
+msgid "Korean"
+msgstr "Coréen"
+
+msgctxt "#40052"
+msgid "Albanian"
+msgstr "Albanais"
+
+msgctxt "#40053"
+msgid "Kyrgyz"
+msgstr "Kirghize"
+
+msgctxt "#40054"
+msgid "Lao"
+msgstr "Lao"
+
+msgctxt "#40055"
+msgid "Lithuanian"
+msgstr "Lituanien"
+
+msgctxt "#40056"
+msgid "Malagasy"
+msgstr "Malgache"
+
+msgctxt "#40057"
+msgid "Macedonian"
+msgstr "Macédonien"
+
+msgctxt "#40058"
+msgid "Chichewa"
+msgstr "Chichewa"
+
+msgctxt "#40059"
+msgid "Bahasa"
+msgstr "Bahasa"
+
+msgctxt "#40060"
+msgid "Melayu"
+msgstr "Melayu"
+
+msgctxt "#40061"
+msgid "Maldivian"
+msgstr "Maldives"
+
+msgctxt "#40062"
+msgid "Mongolian"
+msgstr "Mongol"
+
+msgctxt "#40063"
+msgid "Serbian"
+msgstr "Serbe"
+
+msgctxt "#40064"
+msgid "Burmese"
+msgstr "Birman"
+
+msgctxt "#40065"
+msgid "Urdu"
+msgstr "Ourdou"
+
+msgctxt "#40066"
+msgid "Filipino"
+msgstr "Philippine"
+
+msgctxt "#40067"
+msgid "Polish"
+msgstr "Polonais"
+
+msgctxt "#40068"
+msgid "Romanian"
+msgstr "Roumain"
+
+msgctxt "#40069"
+msgid "Slovak"
+msgstr "Slovaque"
+
+msgctxt "#40070"
+msgid "Slovenian"
+msgstr "Slovène"
+
+msgctxt "#40071"
+msgid "Somali"
+msgstr "Somalien"
+
+msgctxt "#40072"
+msgid "Swedish"
+msgstr "Suédois"
+
+msgctxt "#40073"
+msgid "Undefine"
+msgstr "Indéfini"
+
+msgctxt "#40074"
+msgid "zho"
+msgstr "Chinois"
+
+msgctxt "#40075"
+msgid "eng"
+msgstr "Anglais"
+
+msgctxt "#40076"
+msgid "und"
+msgstr "Indéfini"
+
+
+

@@ -1,0 +1,32 @@
+<a class="popAddNetworkClose close"  href="javascript:;" onClick="close_box('.addNetwork',4);"></a>
+  <h3 id="popAddNetworkH3" class="fillettop4" trans_value="index_28">手动添加网络位置</h3>
+  <div class="tckuangcon filletbot4">
+    <label id="addNwProto" trans_value="index_27">网络协议</label>
+    <div id="dropdown" class="dropdown">
+      <div class="jt"></div>
+      <input class="input_dropdown input-small protocol input"  id="txtNetSharePtl" type="text" value="Windows Network (SMB)" name="protocol" readonly/>
+      <ul class="filletbot4">
+        <li>Windows Network (SMB)</li>
+        <li>Network Filesystem(NFS)</li>
+      </ul>
+    </div>
+    <p>
+      <label id="addNwAddr" trans_value="index_29">服务器地址</label>
+      <input  type="text" name="serverName" class="input-small" id="txtNetShareSrcName"  value=""/>
+    </p>
+    <p>
+      <label id="addNwDomain" trans_value="index_30">域</label>
+      <input  type="text" name="domain" class="input-small" id="txtNetShareDomain" />
+    </p>
+    <p>
+      <label id="addNwUser" trans_value="index_31">用户名</label>
+      <input type="text" name="userName" class="input-small" id="txtNetShareUserName" />
+    </p>
+    <p>
+      <label id="addNwPass" trans_value="index_32">密码</label>
+      <input type="password" name="password"  class="input-small" id="txtNetSharePwd" />
+    </p>
+    <a href="javascript:;"  onClick="close_box('.addNetwork',4);" class="fl btn-small btn-white" trans_value="index_25" id="addNwCancel">取消</a>
+    <a href="javascript:;"  id="btnAddNetworkOK" class="fr btn-small btn-blue" trans_value="index_26">完成</a>
+    <div class="clr"></div>
+  </div>

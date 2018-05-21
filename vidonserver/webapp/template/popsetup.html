@@ -1,0 +1,209 @@
+ <a class="popsetupClose close"  href="javascript:;" id="btnPopsetupClose" onClick="close_box('.popsetup',1);"></a>
+<h3 class="fillettop4"  trans_value="index_71">服务器设置</h3>
+<div class="tckuangcon filletbot4">
+  <div class="setupleft">
+    <ul  id="setupmenu">
+      <li class="selected"  trans_value="index_72">服务器状态2</li>
+      <li  trans_value="index_73">通用</li>
+      <li trans_value="index_74">媒体库</li>
+      <li trans_value="index_75">转码</li>
+      <li trans_value="index_76">升级</li>
+    </ul>
+  </div>
+  <div class="setupright" id="setupright">
+  <div id="setupcontent">
+    <div class="setupcon show">
+      <h4 trans_value="index_77">服务器基本信息</h4>
+      <div class="serverinfo">
+        <p><span trans_value="index_78">服务器名称: </span>
+          <input class="input-small" id="txtServerName" type="text" value="威动服务器" />
+        </p>
+        <p><span trans_value="index_79">服务器版本: </span><span id="lblServerVersion">2.0.2.0</span></p>
+        <p><span trans_value="index_80">服务器ip: </span><span id="lblServerIP">19.168.1.1</span></p>
+        <a href="javascript:;" id="btnSaveState"  class="btn-small btn-blue" trans_value="index_81">保存</a> </div>
+      <h4 class="h4" trans_value="index_82">服务器实时信息</h4>
+      <p trans_value="index_83" class="white" >当前连接用户端</p>
+      <table id="tblClienlist"  class="fillet4 white tblClienlist" >
+        <tr>
+          <td class="row1 col1" trans_value="index_84">客户端名称</td>
+          <td  class="row1 col2" trans_value="index_85">ip地址</td>
+          <td  class="row1" trans_value="index_86">状态</td>
+        </tr>
+        <tr>
+          <td class="col1">iPhone5s</td>
+          <td class="col2">192.168.1.1</td>
+          <td>已连接</td>
+        </tr>
+      </table>
+    </div>
+    <div class="setupcon">
+      <h4 trans_value="index_88">Web页面语言</h4>
+      <div class="weblangs">
+        <div class="dropdown selectLanguage" >
+          <div class="jt"></div>
+          <a title=""  id="selectWebLanguage" class="input_dropdown fillet4" href="javascript:;"><b class="font">中文（简体）</b><span></span></a>
+          <ul id="ulWebLanguage" class="filletbot4">
+            <li cus_value="Chinese (Simple)">中文（简体）</li>
+            <li cus_value="Chinese (Traditional)">繁軆中文</li>
+            <li cus_value="English">English</li>
+            <li cus_value="French">Français</li>
+            <li cus_value="German">Deutsch</li>
+            <li cus_value="Japanese">日本語</li>
+            <li cus_value="Korean" style="font-family:'Meiryo', 'MS Mincho', sans-serif">한국어</li>
+            <li cus_value="Portuguese (Brazil)">Português(Brasil)</li>
+            <li cus_value="Spanish">Español</li>
+            <li cus_value="Swedish">Svenska</li>
+            <li cus_value="Thailand">ไทย</li>
+          </ul>
+        </div>
+        <p class="checkboxblock" id="autostart"><span class="checkbox"></span><span trans_value="index_91" class="white">开机自动启动服务</span></p>
+        <a href="javascript:;"  class="fl btn-small btn-blue" id="btnSaveEssentialInfo" trans_value="index_81">保存</a> <a id="btnCancleEssentialInfo" href="javascript:;"  class="fl btn-small btn-white" trans_value="index_25">取消</a>
+        <div class="clr"></div>
+      </div>
+    </div>
+    <div class="setupcon">
+
+      <h4 trans_value="index_92">自动更新媒体库时间间隔</h4>
+      <div class="dropdown selectLanguage" id="selectWeek">
+        <div class="jt"></div>
+        <a id="updateFrequency" title="" class="input_dropdown fillet4" href="javascript:;"><b class="font" trans_value="index_96">每天</b><span></span></a>
+        <ul id="ulUpdateFrequency" class="filletbot4">
+          <li cus_value="0" trans_value="index_93">每小时</li>
+          <li cus_value="1" trans_value="index_94">每小时</li>
+          <li cus_value="12" trans_value="index_95">每小时</li>
+          <li cus_value="24" trans_value="index_96">每小时</li>
+          <li cus_value="72" trans_value="index_97">每小时</li>
+          <li cus_value="168" trans_value="index_98">每小时</li>
+          <li cus_value="720" trans_value="index_99">每小时</li>
+        </ul>
+      </div>
+      <h4 style="margin-top:50px;" trans_value="index_100">获取电影信息语言</h4>
+      <div class="dropdown selectLanguage" id="selectLanguage">
+        <div class="jt"></div>
+        <a id="subLanguage" title="" class="input_dropdown fillet4" href="javascript:;"><b class="font">中文（简体）</b><span></span></a>
+        <ul id="ulSubLanguage" class="filletbot4">
+          <li cus_value="zh">中文</li>
+          <li cus_value="en">English</li>
+          <li cus_value="us">English (US)</li>
+          <li cus_value="fr">Français</li>
+          <li cus_value="de">Deutsch</li>
+          <li cus_value="ja">日本語</li>
+          <li cus_value="ko" style="font-family:'Meiryo', 'MS Mincho', sans-serif">한국어</li>
+          <li cus_value="pt">Português(Brasil)</li>
+          <li cus_value="es">Español</li>
+        </ul>
+      </div>
+
+      <a href="javascript:;"  class="fl btn-small btn-blue" id="btnSaveMediaLibrary" trans_value="index_81">保存</a> <a id="btnCancleMediaLibrary" href="javascript:;"  class="fl btn-small btn-white" trans_value="index_25">取消</a>
+      <div class="clr"></div>
+    </div>
+    <div class="setupcon">
+      <h4 trans_value="index_101">转码设置</h4>
+      <div id="hardCodecSupport" class="disable">
+        <p class="checkboxblock" id="opendecoding"><span class="checkbox"></span><span trans_value="index_102" class="white">开启硬件解码编码</span></p>
+        <p class="disablep"  style="height:auto;"><span></span><b  trans_value="index_102">开启硬件解码编码</b> <b class="red"  trans_value="index_104"></b></p>
+        <p trans_value="index_103">启用硬件解码硬件编码功能，可以减轻CPU负担，并使视频播放更流畅</p>
+        <a href="javascript:;"  class="fl btn-small btn-blue" id="btnSaveTranscode" trans_value="index_81">保存</a> <a id="btnCancleTranscode" href="javascript:;"  class="fl btn-small btn-white" trans_value="index_25">取消</a> </div>
+      <div class="clr"></div>
+    </div>
+    <div class="setupcon">
+      <h4 trans_value="index_105">自动升级</h4>
+      <p class="checkboxblock" id="autoUpdate"><span class="checkbox selected"></span><span trans_value="index_106" class="white">开启自动升级</span></p>
+      <p trans_value="index_108" class="white">升级时间</p>
+      <div class="autoupgrade">
+        
+        <div class="dropdown upgradeDate" id="upgradeDate" style="margin-top:5px;">
+          <div class="jt"></div>
+          <a title="" class="input_dropdown fillet4" href="javascript:;"><b class="font" trans_value="index_96">每天</b><span></span></a>
+          <ul class="filletbot4">
+            <li cus_value="0" trans_value="index_96">每星期</li>
+            <li cus_value="1" trans_value="index_109">每星期</li>
+            <li cus_value="2" trans_value="index_110">每星期</li>
+            <li cus_value="3" trans_value="index_111">每星期</li>
+            <li cus_value="4" trans_value="index_112">每星期</li>
+            <li cus_value="5" trans_value="index_113">每星期</li>
+            <li cus_value="6" trans_value="index_114">每星期</li>
+            <li cus_value="7" trans_value="index_115">每星期</li>
+          </ul>
+        </div>
+        <p trans_value="index_116">在</p>
+        <div class="dropdown upgradeTime" id="upgradeTime" style="margin-top:5px;">
+          <div class="jt"></div>
+          <a title="" class="input_dropdown fillet4" href="javascript:;"><b class="font" trans_value="index_120">3:00</b><span></span></a>
+          <ul class="filletbot4">
+            <li cus_value="0" trans_value="index_117">0:00</li>
+            <li cus_value="1" trans_value="index_118">1:00</li>
+            <li cus_value="2" trans_value="index_119">2:00</li>
+            <li cus_value="3" trans_value="index_120">3:00</li>
+            <li cus_value="4" trans_value="index_121">4:00</li>
+            <li cus_value="5" trans_value="index_122">5:00</li>
+            <li cus_value="6" trans_value="index_123">6:00</li>
+            <li cus_value="7" trans_value="index_124">7:00</li>
+            <li cus_value="8" trans_value="index_125">8:00</li>
+            <li cus_value="9" trans_value="index_126">9:00</li>
+            <li cus_value="10" trans_value="index_127">10:00</li>
+            <li cus_value="11" trans_value="index_128">11:00</li>
+            <li cus_value="12" trans_value="index_129">12:00</li>
+            <li cus_value="13" trans_value="index_130">13:00</li>
+            <li cus_value="14" trans_value="index_131">14:00</li>
+            <li cus_value="15" trans_value="index_132">15:00</li>
+            <li cus_value="16" trans_value="index_133">16:00</li>
+            <li cus_value="17" trans_value="index_134">17:00</li>
+            <li cus_value="18" trans_value="index_135">18:00</li>
+            <li cus_value="19" trans_value="index_136">19:00</li>
+            <li cus_value="20" trans_value="index_137">20:00</li>
+            <li cus_value="21" trans_value="index_138">21:00</li>
+            <li cus_value="22" trans_value="index_139">22:00</li>
+            <li cus_value="23" trans_value="index_140">23:00</li>   
+          </ul>
+        </div>
+       
+        <div class="clr"></div>
+      </div>
+      <h4  trans_value="index_141">当前版本</h4>
+      
+      <div  class="versionnew" id="versionNew" status="2" style="display:none">
+        <p><span trans_value="index_149">威动服务器</span>:&nbsp<span id="curVersion">v2.0.0.1稳定版</span></p>
+        <p  trans_value="index_142">当前已是最新版</p>
+      </div>
+      <div  class="versionfindnew" id="versionFindNew" status="1" style="display:none">
+        <p><span trans_value="index_149">威动服务器: </span>:&nbsp<span id="curVersion">v2.0.0.1稳定版</span></p>
+        <p><span trans_value="index_143">发现新版本:</span>:&nbsp<span id="newVersion">v3.0.0.1</span></p>
+        <ul id="changelog">
+          <li>修改中文环境下升级失败问题</li>
+          <li>修复下载资源到移动端失败问题</li>
+        </ul>
+        <a href="javascript:;" class="btn-small btn-blue" id="btnUpgrade" trans_value="index_144">立即下载</a> </div>
+      <div  class="versiondown" id="versionDown" status="3" style="display:none">
+          <p><span trans_value="index_149">威动服务器: </span>:&nbsp<span id="curVersion">v2.0.0.1稳定版</span></p>
+          <p><span trans_value="index_143">发现新版本:</span>:&nbsp<span id="newVersion">v3.0.0.1</span></p>
+          <div class="progreessbarblock">
+            <p  trans_value="index_145">正在下载</p>
+            <div class="progress">
+              <div class="progress-bar" style="width:40%"></div>
+            </div>
+            <P id="percent">40%</p>
+          </div>
+          <div class="clr"></div>
+          <p trans_value="index_146">升级中请不要退出程序</p>
+      </div>
+      <div  class="versiondownfail" id="versionDownFail" status="5" style="display:none">
+        <p><span trans_value="index_149">威动服务器: </span>:&nbsp<span id="curVersion">v2.0.0.1稳定版</span></p>
+         <p><span trans_value="index_143">发现新版本:</span>:&nbsp<span id="newVersion">v3.0.0.1</span></p>
+        <P trans_value="index_156">对不起，下载失败…</p>
+        <P trans_value="index_157">您还可以到我们的官网去下载最新版本：<a href="http://www.vidon.me/vidon_server.htm">http://www.vidon.me/vidon_server.htm</a></p>
+      </div>
+      <div  class="versioninstall" id="versionInstall" status="6">
+        <p><span trans_value="index_149">威动服务器: </span>:&nbsp<span id="curVersion">v2.0.0.1稳定版</span></p>
+        <p><span trans_value="index_143">发现新版本:</span>:&nbsp<span id="newVersion">v3.0.0.1</span></p>
+        <div class="clr"></div>
+        <p trans_value="index_147">下载完成，安装中…</p>
+        <p trans_value="index_148">安装完成后，软件会为您弹出新的web管理界面</p>
+      </div>
+      <div  class="versioninstallfail" id="versionInstallFail"> </div>
+    </div>
+   </div>
+  </div>
+</div>
+<div class="clr"></div>
+</div>

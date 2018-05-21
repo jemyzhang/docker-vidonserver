@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Sortable - Default functionality</title>
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({
+          cursor: "move",
+          items :"li",                        //只是li可以拖动
+          opacity: 0.6,                       //拖动时，透明度为0.6
+          revert: true,                       //释放时，增加动画
+          update : function(event, ui){       //更新排序之后
+              alert($(this).sortable("toArray"));
+          }
+      });
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
+</head>
+<body>
+ 
+<ul id="sortable">
+  <li class="ui-state-default" id="1">Item 1</li>
+  <li class="ui-state-default" id="2">Item 2</li>
+  <li class="ui-state-default" id="3">Item 3</li>
+  <li class="ui-state-default" id="4">Item 4</li>
+  <li class="ui-state-default" id="5">Item 5</li>
+  <li class="ui-state-default" id="6">Item 6</li>
+  <li class="ui-state-default" id="7">Item 7</li>
+</ul>
+ 
+ 
+</body>
+</html>

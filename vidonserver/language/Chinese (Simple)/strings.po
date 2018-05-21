@@ -1,0 +1,448 @@
+﻿# VidOn.me Media Server language file
+msgid ""
+msgstr ""
+"Project-Id-Version: VidOn.me Media Server\n"
+"Report-Msgid-Bugs-To: http://www.vidonme.com/\n"
+"POT-Creation-Date: 2012-05-04 12:46+0000\n"
+"PO-Revision-Date: 2012-05-28 22:49+0000\n"
+"Last-Translator: VidOn Server Translation Team\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#001"
+msgid "OK"
+msgstr "确定"
+
+msgctxt "#002"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "#003"
+msgid "Download"
+msgstr "下载"
+
+msgctxt "#004"
+msgid "Background"
+msgstr "后台下载"
+
+msgctxt "#005"
+msgid "Install"
+msgstr "安装"
+
+msgctxt "#006"
+msgid "Upgrade"
+msgstr "升级"
+
+msgctxt "#301"
+msgid "Server Manager..."
+msgstr "服务器管理..."
+
+msgctxt "#302"
+msgid "Update Library"
+msgstr "更新媒体库"
+
+msgctxt "#303"
+msgid "Start Server on Windows Startup"
+msgstr "开机启动"
+
+msgctxt "#304"
+msgid "Advanced features"
+msgstr "高级功能"
+
+msgctxt "#305"
+msgid "Check for Updates"
+msgstr "检查更新"
+
+msgctxt "#306"
+msgid "About..."
+msgstr "关于..."
+
+msgctxt "#307"
+msgid "Quit"
+msgstr "退出"
+
+msgctxt "#1001"
+msgid "Current version: "
+msgstr "当前版本："
+
+msgctxt "#1002"
+msgid "New version: "
+msgstr "发现新版本："
+
+msgctxt "#1003"
+msgid "You are running the latest version."
+msgstr "当前已是最新版本。"
+
+msgctxt "#1004"
+msgid "Downloading update files, please wait..."
+msgstr "正在下载更新文件，请稍候... "
+
+msgctxt "#1005"
+msgid "Download completed, now install? "
+msgstr "下载完成，是否立即安装？ "
+
+msgctxt "#1006"
+msgid "Update failed, please check your network connection.\r\nYou can download and install the new version from VidOn.me official website at: "
+msgstr "升级失败，请检查网络连接。\r\n您也可以直接前往VidOn.me官方网站下载更新程序，下载地址："
+
+msgctxt "#1007"
+msgid "Program is already running!"
+msgstr "已经运行！"
+
+msgctxt "#1008"
+msgid "Service started successfully!"
+msgstr "服务启动成功！"
+
+msgctxt "#1009"
+msgid "Checking for update..."
+msgstr "正在检查更新..."
+
+msgctxt "#1010"
+msgid "Updating media library..."
+msgstr "正在更新媒体库..."
+
+msgctxt "#1011"
+msgid "Failure updating media library!"
+msgstr "媒体库更新失败！"
+
+msgctxt "#1012"
+msgid "Media library updated successfully!"
+msgstr "媒体库更新成功！"
+
+msgctxt "#1013"
+msgid "Website: "
+msgstr "官方网站："
+
+msgctxt "#1014"
+msgid "Forum: "
+msgstr "官方论坛："
+
+msgctxt "#1015"
+msgid "Change Log"
+msgstr "更新日志"
+
+msgctxt "#1016"
+msgid "Updater app successfully initiated..."
+msgstr "更新程序已经运行..."
+
+msgctxt "#1017"
+msgid "Open the log folder"
+msgstr "打开日志目录"
+
+msgctxt "#20358"
+msgid "Season %i"
+msgstr "第%i季"
+
+msgctxt "#20381"
+msgid "Specials"
+msgstr "特别版"
+
+
+msgctxt "#40001"
+msgid "English"
+msgstr "英语"
+
+msgctxt "#40002"
+msgid "Chinese"
+msgstr "中文"
+
+msgctxt "#40003"
+msgid "Mandarin"
+msgstr "国语"
+
+msgctxt "#40004"
+msgid "Putonghua"
+msgstr "普通话"
+
+msgctxt "#40005"
+msgid "Yue"
+msgstr "粤语"
+
+msgctxt "#40006"
+msgid "Cantonese"
+msgstr "广东话"
+
+msgctxt "#40007"
+msgid "Wu"
+msgstr "吴方言"
+
+msgctxt "#40008"
+msgid "Shanghaiese"
+msgstr "上海话"
+
+msgctxt "#40009"
+msgid "Minbei"
+msgstr "闽北方言"
+
+msgctxt "#40010"
+msgid "Fuzhou"
+msgstr "福州话"
+
+msgctxt "#40011"
+msgid "Minnan"
+msgstr "闽南方言"
+
+msgctxt "#40012"
+msgid "Hokkien"
+msgstr "福建话"
+
+msgctxt "#40013"
+msgid "Taiwanese"
+msgstr "台湾话"
+
+msgctxt "#40014"
+msgid "Spanish"
+msgstr "西班牙语"
+
+msgctxt "#40015"
+msgid "Greek"
+msgstr "希腊语"
+
+msgctxt "#40016"
+msgid "Albanian"
+msgstr "阿尔巴尼亚语"
+
+msgctxt "#40017"
+msgid "Arabic"
+msgstr "阿拉伯语"
+
+msgctxt "#40018"
+msgid "French"
+msgstr "法语"
+
+msgctxt "#40019"
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+msgctxt "#40020"
+msgid "Italian"
+msgstr "意大利语"
+
+msgctxt "#40021"
+msgid "German"
+msgstr "德语"
+
+msgctxt "#40022"
+msgid "Armenian"
+msgstr "亚美尼亚语"
+
+msgctxt "#40023"
+msgid "Yezidi"
+msgstr "雅兹迪语"
+
+msgctxt "#40024"
+msgid "Russian"
+msgstr "俄语"
+
+msgctxt "#40025"
+msgid "Slovene"
+msgstr "斯洛文尼亚语"
+
+msgctxt "#40026"
+msgid "Croatian"
+msgstr "克罗地亚语"
+
+msgctxt "#40027"
+msgid "Hungarian"
+msgstr "匈牙利语"
+
+msgctxt "#40028"
+msgid "Bangla"
+msgstr "孟加拉语"
+
+msgctxt "#40029"
+msgid "Belorussian"
+msgstr "白俄罗斯语"
+
+msgctxt "#40030"
+msgid "Dutch"
+msgstr "荷兰语"
+
+msgctxt "#40031"
+msgid "Mayan"
+msgstr "玛雅语"
+
+msgctxt "#40032"
+msgid "Malay"
+msgstr "马来语"
+
+msgctxt "#40033"
+msgid "Bulgarian"
+msgstr "保加利亚语"
+
+msgctxt "#40034"
+msgid "Kirund"
+msgstr "基隆迪语"
+
+msgctxt "#40035"
+msgid "Khmer"
+msgstr "高棉语"
+
+msgctxt "#40036"
+msgid "Czech"
+msgstr "捷克语"
+
+msgctxt "#40037"
+msgid "Danish"
+msgstr "丹麦语"
+
+msgctxt "#40038"
+msgid "Tetum"
+msgstr "德顿语"
+
+msgctxt "#40039"
+msgid "Amharic"
+msgstr "阿姆哈拉语"
+
+msgctxt "#40040"
+msgid "Finnish"
+msgstr "芬兰语"
+
+msgctxt "#40041"
+msgid "Georgian"
+msgstr "格鲁吉亚语"
+
+msgctxt "#40042"
+msgid "Creole"
+msgstr "克里奥耳语"
+
+msgctxt "#40043"
+msgid "Magyar"
+msgstr "马扎尔语"
+
+msgctxt "#40044"
+msgid "Hungarian"
+msgstr "匈牙利语"
+
+msgctxt "#40045"
+msgid "Icelandic"
+msgstr "冰岛语"
+
+msgctxt "#40046"
+msgid "Hindi"
+msgstr "北印度语"
+
+msgctxt "#40047"
+msgid "Bahasa"
+msgstr "印尼语"
+
+msgctxt "#40048"
+msgid "Persian"
+msgstr "波斯语"
+
+msgctxt "#40049"
+msgid "Hebrew"
+msgstr "希伯来语"
+
+msgctxt "#40050"
+msgid "Japanese"
+msgstr "日语"
+
+msgctxt "#40051"
+msgid "Korean"
+msgstr "韩语"
+
+msgctxt "#40052"
+msgid "Albanian"
+msgstr "阿尔巴尼亚语"
+
+msgctxt "#40053"
+msgid "Kyrgyz"
+msgstr "吉尔吉斯语"
+
+msgctxt "#40054"
+msgid "Lao"
+msgstr "老挝语"
+
+msgctxt "#40055"
+msgid "Lithuanian"
+msgstr "立陶宛语"
+
+msgctxt "#40056"
+msgid "Malagasy"
+msgstr "马达加斯加语"
+
+msgctxt "#40057"
+msgid "Macedonian"
+msgstr "马其顿语"
+
+msgctxt "#40058"
+msgid "Chichewa"
+msgstr "齐切瓦语"
+
+msgctxt "#40059"
+msgid "Bahasa"
+msgstr "印尼语"
+
+msgctxt "#40060"
+msgid "Melayu"
+msgstr "马来语"
+
+msgctxt "#40061"
+msgid "Maldivian"
+msgstr "马尔代夫语"
+
+msgctxt "#40062"
+msgid "Mongolian"
+msgstr "蒙古语"
+
+msgctxt "#40063"
+msgid "Serbian"
+msgstr "塞尔维亚语"
+
+msgctxt "#40064"
+msgid "Burmese"
+msgstr "缅甸语"
+
+msgctxt "#40065"
+msgid "Urdu"
+msgstr "乌尔都语"
+
+msgctxt "#40066"
+msgid "Filipino"
+msgstr "菲律宾语"
+
+msgctxt "#40067"
+msgid "Polish"
+msgstr "波兰语"
+
+msgctxt "#40068"
+msgid "Romanian"
+msgstr "罗马尼亚语"
+
+msgctxt "#40069"
+msgid "Slovak"
+msgstr "斯洛伐克语"
+
+msgctxt "#40070"
+msgid "Slovenian"
+msgstr "斯洛维尼亚语"
+
+msgctxt "#40071"
+msgid "Somali"
+msgstr "索马里语"
+
+msgctxt "#40072"
+msgid "Swedish"
+msgstr "瑞典语"
+
+msgctxt "#40073"
+msgid "Undefine"
+msgstr "未识别"
+
+msgctxt "#40074"
+msgid "zho"
+msgstr "中文"
+
+msgctxt "#40075"
+msgid "eng"
+msgstr "英语"
+
+msgctxt "#40076"
+msgid "und"
+msgstr "未知"
+

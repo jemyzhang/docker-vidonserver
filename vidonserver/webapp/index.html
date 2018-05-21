@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"> 
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+<title>VidOn.me</title>
+<script src="js/jquery-1.8.2.min.js"></script> 
+<script>
+	var AppVersion = 123456;
+	var array = window.location.href.split("?"); 
+	if ( array.length > 1 ) {
+		AppVersion = array[1];
+	}  
+
+	if (($.browser.msie && $.browser.version <= 7.0) 
+		|| ($.browser.mozilla && $.browser.version <= 3.5) 
+		|| ($.browser.webkit && $.browser.version <= 3.1) 
+		|| ($.browser.opera && $.browser.version <= 11) 
+		|| ($.browser.safari && $.browser.version <= 3.1)) {
+		location.assign("nonsupport.html?" + AppVersion) ;
+		window.location="nonsupport.html?" + AppVersion;
+		location.href="nonsupport.html?" + AppVersion;
+	}
+
+	var str ='<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css?'+ AppVersion +'"/>';
+	str += '<script type="text/javascript" src="js/vidon.me.index.launcher.js?' + AppVersion + '"></scr' + 'ipt>';
+	
+	document.write(str);
+</script>
+</head>
+<body>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script type="text/javascript">
+	var str = '<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js?' + AppVersion + '"></scr' + 'ipt>';
+	document.write(str);
+
+	$(function(){
+		vidonme.rpc.request({
+		        'context': this,
+		        'method': 'VidOnMe.IsWizzardEnabled',
+		        'params': {},
+		        'success': function(data) {
+					if( data ){
+						var debug = false;
+						var version = (debug ? Math.random() : AppVersion );
+						if( data.result.ret == true ){
+							location.assign("guide.html?" + version );
+							window.location="guide.html?" + version;
+							location.href="guide.html?" + version;
+						}
+						else{
+							location.assign("mediashow.html?" + version) ;
+							window.location="mediashow.html?" + version;
+							location.href="mediashow.html?" + version;
+						}
+					}
+			    }
+	    });
+	});
+
+</script>
+</body>
+</html>

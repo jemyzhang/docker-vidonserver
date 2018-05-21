@@ -1,0 +1,231 @@
+<textarea id="topbar_btns" style="display:none">
+    <div class="topbardropdown">
+        <a href="javascript:;" class="libraryShowBtn" title="{$P.topBarStaticDatas.libraryShowBtnTitle}"></a>
+        <div class="showtypeblock">
+            <ul>
+                <li class="viewMode selected isAutoClass">{$P.topBarStaticDatas.libraryShowStr_1}</li>
+                <li class="viewMode">{$P.topBarStaticDatas.libraryShowStr_2}</li>
+            </ul>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <a href="javascript:;" class="librarySortBtn"  title="{$P.topBarStaticDatas.librarySortBtnTitle}"></a>
+    <a href="javascript:;" class="libraryFilterBtn" title="{$P.topBarStaticDatas.libraryFilterBtnTitle}"></a>
+    <a href="javascript:;" class="libraryEditBtn" title="{$P.topBarStaticDatas.libraryEditBtnTitle}"></a>
+    <a href="javascript:;" class="libraryMoveBtn" title="{$P.topBarStaticDatas.libraryMoveBtnTitle}"></a>
+    <a href="javascript:;" class="libraryDeleteBtn" title="{$P.topBarStaticDatas.libraryDeleteBtnTitle}"></a>
+    <a href="javascript:;" class="libraryRefreshBtn"></a>
+	</textarea>
+
+<textarea id="topbar_filter" style="display:none"></textarea>
+
+<textarea id="topbar_sort" style="display:none">
+    <div class="librarynum">
+        {$P.topBarStaticDatas.librarySortStr_1}
+        <span>125</span>
+    </div>
+    <div class="topsortcontent">
+        <span> {$P.topBarStaticDatas.librarySortStr_2}：</span>
+        {#foreach $T as sortData}
+            {#if $T.sortData.selected}
+        <a href="javascript:;" class="selectedtop" method="{$T.sortData.method}">{$T.sortData.title}</a>
+        {#else}
+        <a href="javascript:;" method="{$T.sortData.method}">{$T.sortData.title}</a>
+        {#/if}
+        {#/for}
+    </div>
+    <div class="clr"></div>
+</textarea>
+
+<textarea id="topbar_mediatab" style="display:none">
+    <a href="javascript:;" class="libraryshowmovie selected">{$P.topBarStaticDatas.libraryShowStr_3}</a>
+    <a href="javascript:;" class="libraryshowtv">{$P.topBarStaticDatas.libraryShowStr_4}</a>
+    <a href="javascript:;" class="libraryshowvideo">{$P.topBarStaticDatas.libraryShowStr_5}</a>
+</textarea>
+
+<textarea id="topbar_search" style="display:none">
+    <div class="topnavblocktitle">
+        <div class="topbtnblock" >
+            <a href="javascript:;" class="searchlibraryMoveBtn" title="{$P.topBarStaticDatas.libraryMoveBtnTitle}"></a>
+        </div>
+        <div class="posterMenu">
+            <a class="backbtn click_searchBackBtn" href="javascript:;"></a>
+        </div>
+        <P class="searchtitle">{$P.searchKey}</P>
+        
+        <div class="clr"></div>
+    </div>
+    <div class="editlibrary" id="moveMediaControl_searchPage"></div>
+</textarea>
+
+<!--tvshow episode detail page-->
+<textarea id="tvshow_episode_detail" style="display:none">
+<div class="posterMenu">
+    <a href="javascript:;" class="backbtn click_backtvshow" id="backtotv">{$P.title.index_39}</a>
+</div>
+
+<div class="details_title_block">
+    <h2 class="item_year">{$T.year}</h2>
+    <h1 class="item_title">{$T.title}</h1>
+</div>
+<div class="details_metadata_block">
+    <P class="floatp">
+        <span>{$P.title.director}:</span>
+        <span class="white"><a href="javascript:;" vtype="director" onclick="findOtherVideos(this)">{$T.director}</a></span>
+    </p>
+    <P class="floatp">
+        <span>{$P.title.time}:</span>
+        <span class="white">{$T.runtime}</span>
+    </p>
+    <P class="floatp">
+        <span>{$P.title.country}:</span>
+        {#foreach $T.country as eachCountry}
+        {#if !$T.eachCountry$last}
+        <span class="white"><a href="javascript:;" vtype="country" onclick="findOtherVideos(this)">{$T.eachCountry}</a><a>, </a></span>
+        {#else}
+        <span class="white"><a href="javascript:;" vtype="country" onclick="findOtherVideos(this)">{$T.eachCountry}</a></span>
+        {#/if}
+        {#/for}
+    </p>
+    <P class="floatp">
+        <span>{$P.title.genre}:</span>
+        {#foreach $T.genre as eachGenre}
+        {#if !$T.eachGenre$last}
+        <span class="white"><a href="javascript:;" vtype="genre" onclick="findOtherVideos(this)">{$T.eachGenre}</a><a>, </a></span>
+        {#else}
+        <span class="white"><a href="javascript:;" vtype="genre" onclick="findOtherVideos(this)">{$T.eachGenre}</a></span>
+        {#/if}
+        {#/for}
+    </p>
+    <P class="floatp">
+        <span>{$P.title.mpaa}:</span>
+        <span class="white"><a href="javascript:;" vtype="mpaa" onclick="findOtherVideos(this)">{$T.mpaa}</a></span>
+    </p>
+    <div class="clr"></div>
+    <p  class="fullwidth">
+        <span>{$P.title.plot}</span>
+        <br>
+        <span class="white">{$T.plot}</span>
+    </p>
+    <div class="fullwidth clearfix starsblockinner js-starsblockinner">
+    {#if $T.cast.length > 0}
+        <P>{$P.title.stars}</P>
+        {#foreach $T.cast as eachCast}
+        <div class="starsblock">
+            <img src="{$T.eachCast.thumbnail}">
+            <P class="white" style="cursor:pointer;" vtype="actor" onclick="findOtherVideos(this)">{$T.eachCast.name}</P>
+            <p>{$T.eachCast.role}</P>
+        </div>
+        {#/for}
+        <div class="jt"></div>
+    {#/if}
+    </div>
+    <div class="clr"></div>
+    <div class="clearfix seasonlist">
+        {#foreach $P.seasons as eachSeason}
+        <div class="box">
+            <div class="pic">
+                <div class="img click_season" seasonindex="{$T.eachSeason$index}" style="background-image:url({$T.eachSeason.thumbnail});">
+                    <div class="collectionbg"><span class="Moviescount">{$T.eachSeason.episodes.length}</span></div>
+                </div>
+                <p class="imgname">{$T.eachSeason.seasonTitle}</p>
+            </div>
+        </div>
+        {#/for}
+    </div>
+    <div class="rating details_rating_block">
+        <div class="ratingblock">
+            <div style="width:{$T.rating}%;" class="ratingvalue"></div>
+        </div>
+        <div class="ratingnum">{$T.strrating}</div>
+    </div>
+</div>
+<div class="details_poster box_big">
+    <div class="pic_big">
+        <div fileid="{$T.idfile}" filepath="{$T.file}" style="background-image:url({$T.thumbnail});"  class="img">
+            <div class="singleimgbg">
+                <a href="javascript:;" class="playerbtn" ></a>
+                <a href="javascript:;" class="editbtn type_tvshow"></a>
+                <a href="javascript:;" class="morebtn"></a>
+                <ul class="morelist"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+
+<textarea id="move_media" style="display:none">
+    <div class="editMoveBlock editlibraryblock" >
+    <div class="editlibraryinfo">
+        <div class="libraryname ">
+        <div class="vertical">
+            <p class="vertical_wrap">
+                <span id="siderbar_channel" class="vertical_content ">{$P.StaticDatas.editLibraryStatic.editLibraryStr_1}</span>
+            </p>
+        </div>
+        </div>
+        <div class="selectedinfo clearfix">
+            <p>
+                {$P.StaticDatas.editLibraryStatic.editLibraryStr_2}(
+                <span class="selectedCount" id="js_moveMedia_num">0</span>
+                )
+            </p>
+            <p class="selectedAll editLibraryselectedAll">
+                <span class="checkbox" id="js_moveMedia_checkbox"></span>
+                <span>{$P.StaticDatas.editLibraryStatic.editLibraryStr_3}</span>
+            </p>
+        </div>
+        <div class="transferredinfo">
+            <p>{$P.StaticDatas.editLibraryStatic.editLibraryStr_4}</p>
+            <div id="js_moveMedia_dropdow" class="dropdown dropdown-small dropdown-bg transferredTo">
+                <div class="jt"></div>
+                
+                <input class="input_dropdown input" id="js_moveMedia_input_dropdown" cus_value="{$T.transfeeredto.id}" value="{$T.transfeeredto.name}" disabled="true" />
+                <ul class="filletbot4"  style="display: none;">
+                {#foreach $T.libraryList as eachData}
+                    <li cus_value="{$T.eachData.id}">{$T.eachData.name}</li>
+                {#/for} 
+                <li cus_value="-10">{$P.StaticDatas.editLibraryStatic.editLibraryStr_5}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="editlibrarybtn">
+            <a href="javascript:;" class="editlibrarycannel" id="js_moveMedia_cancel" title="{$P.StaticDatas.editLibraryStatic.editLibraryStr_btn1}"></a>
+            <a href="javascript:;" class="editlibraryok disable" id="js_moveMedia_ok"  title="{$P.StaticDatas.editLibraryStatic.editLibraryStr_btn2}"></a>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+</textarea>
+
+<textarea id="delete_media" style="display:none">
+    <div class="editMoveBlock editlibraryblock" >
+    <div class="editlibraryinfo">
+        <div class="libraryname ">
+        <div class="vertical">
+            <p class="vertical_wrap">
+                <span id="siderbar_channel" class="vertical_content ">{$P.StaticDatas.editLibraryStatic.editLibraryStr_1}</span>
+            </p>
+        </div>
+        </div>
+        <div class="selectedinfo clearfix">
+            <p>
+                {$P.StaticDatas.editLibraryStatic.editLibraryStr_2}(
+                <span class="selectedCount" id="js_delMedia_num">0</span>
+                )
+            </p>
+            <p class="selectedAll editLibraryselectedAll">
+                <span class="checkbox" id="js_delMedia_checkbox"></span>
+                <span>{$P.StaticDatas.editLibraryStatic.editLibraryStr_3}</span>
+            </p>
+        </div>
+
+        <div class="editlibrarybtn">
+            <a href="javascript:;" class="editlibrarycannel" id="js_delMedia_cancel" title="{$P.StaticDatas.editLibraryStatic.editLibraryStr_btn1}"></a>
+            <a href="javascript:;" class="editlibraryok disable" id="js_delMedia_ok"  title="{$P.StaticDatas.editLibraryStatic.editLibraryStr_btn2}"></a>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+</textarea>

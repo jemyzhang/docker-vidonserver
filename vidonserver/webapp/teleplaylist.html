@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>teleplaylist</title>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+<body>
+<form method="post">
+  <div class="containter">
+    <div class="header addhtml" id="header" url="template/header.html"> 
+    </div>
+    <div class="siderbar addhtml" id="siderbar" url="template/siderbar.html">
+      
+    </div>
+    <div class="content2 teleplaylist">
+      <div class="zhezhao"></div>
+      <div class="posterMenu"> <a href="javascript:;" class="backbtn" title="全部" id="teleplayName">电视剧</a> </div>
+      <div class="posterList">
+        <div class="teleplayTop">
+          <div class="left fillet10" ><img class="fillet10" src="images/3.jpg" width="209" height="305" /></div>
+          <div class="right">
+            <h3>绝命毒师</h3>
+            <div class="rating">
+            <div class="ratingblock"><div class="ratingvalue" ></div></div>
+            <div class="ratingnum">4.5</div>
+
+            </div>
+            <div class="detail">
+              <p>导演：米歇尔·迈凯伦、Michelle MacLaren、亚当·伯恩斯坦、Adam Bernstein、文斯·吉利甘、Vince Gilligan</p>
+              <p>类型：</p>
+              <p>国家：美国</p>
+              <p>演员：Bryan Cranston、Aaron Paul、Anna Gunn、Dean Norris、Betsy Brandt、RJ Mitte</p>
+              <p>详情：故事发生在新墨西哥州，高中化学老师沃尔特-怀特是一位平凡得不能再平凡的小人物。沃特本是大学研究所化学高材生，并参与过诺贝尔化学奖的合作，但为了过平凡的生活而放弃成为化学家，在一所高中担任化学老师。但是他却被诊断出患了中晚期肺癌。面对突如其来的不幸，他首先想到的是家人未来的生计问题，因为他家中有一位40多岁怀有身孕的妻子和患有轻度脑瘫的儿子。而他是家里唯一的经济来源。</p>
+            </div>
+          </div>
+          <div class="clr"></div>
+        </div>
+        <div class="teleplaylistblock">
+          <div class="box">
+            <div class="pic">
+              <div class="img fillet10">
+                <div class="imgbg"></div>
+                <img class="fillet10"  src="images/13.jpg"/> </div>
+              <p class="imgname">Season 1</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic">
+              <div class="img fillet10">
+                <div class="imgbg"></div>
+                <img class="fillet10"  src="images/14.jpg"/> </div>
+              <p class="imgname">Season 2</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic">
+              <div class="img fillet10">
+                <div class="imgbg"></div>
+                <img class="fillet10"  src="images/11.jpg"/> </div>
+              <p class="imgname">Season 3</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic">
+              <div class="img fillet10">
+                <div class="imgbg"></div>
+                <img class="fillet10"  src="images/12.jpg"/> </div>
+              <p class="imgname">Season 4</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic">
+              <div class="img fillet10">
+                <div class="imgbg"></div>
+                <img class="fillet10"  src="images/18.jpg"/> </div>
+              <p class="imgname">Season 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</form>
+<div class="tckuang addNoPlay fillet10 addhtml" url="template/popaddnoplay.html"> </div>
+<div class="tckuang addVideo fillet10 addhtml" url="template/popaddvideo.html"> </div>
+<div class="tckuang  addPath fillet10 addhtml" url="template/popaddpath.html"></div>
+<div class="tckuang addNetwork fillet10 addhtml"  url="template/popaddnetwork.html"> </div>
+<div class="tckuang confirmDelete fillet10 addhtml" url="template/popconfirmdelete.html"></div>
+<div class="tckuang poplogin fillet10 addhtml" url="template/poplogin.html"> </div>
+<div class="tckuang popabout fillet10 addhtml" url="template/popabout.html"></div>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script type="text/javascript" src="js/global.js"></script> 
+<script type="text/javascript">
+	$(function(){
+		//侧边栏当前项选中
+		$("#siderbar dd").eq(1).addClass("selected");
+		$('#selectedPath li:even').addClass("even");
+		$("#selectedPath").delegate('.delete',"click",function(){
+				$(this).parent().remove();
+		})
+		$("#selectedPath").delegate('li',"hover",function(){
+				 $(this).toggleClass("hover");
+		})
+
+		$("#selectedPath").mCustomScrollbar({
+		  autoHideScrollbar:true,
+        });
+		
+		$(".addNwPath").click(function(){
+				showdiv(".addNetwork",4);
+				
+				
+			})
+		$(".movie .posterList .img,.teleplaydetails .posterList .img").click(function(){
+			showdiv(".addNoPlay",1);
+			})
+		$("#fresh").click(function(){
+			  if(!$(this).hasClass("loading")){
+				  $(this).addClass("loading");
+				  console.log("开始刷新");
+				  //刷新完成清删除loading样式
+				  }
+			  else{
+				  $(this).removeClass("loading");
+				  console.log("停止刷新");
+				  }
+			  })
+		
+		var isno=false;
+		//测试用变量
+		var data='<div class="box">'+
+        '<div class="pic">'+
+          '<div class="img fillet10"><div class="imgbg"></div> <img class="fillet10"  src="images/17.jpg"/> </div>'+
+          '<p class="imgname">Name</p>'+
+        '</div>'+
+      '</div>';
+	  //IE7
+		$(".posterList").scroll(function(){
+    		console.log("scroll....")
+    		if(!isno) {
+    		 	 var scrollTop=$(".posterList").scrollTop();
+				 var docHeight=$(".posterList").get(0).scrollHeight;
+	    		 var winHeight=$(window).height()-80;
+	    		 if(scrollTop+winHeight>=docHeight){
+	    		 	 isno=true;
+					 alert('请求新数据...');//IE7兼容用
+			 		// for(var i=0;i<20;i++){
+					//$(".posterList").append(src);
+					
+					//}
+			         isno=false; 	         
+	    		 }  
+	        } 		 	
+    		   		 
+    	})
+		//IE7++
+		$(".posterList").mCustomScrollbar({
+          scrollButtons:{enable:true},
+          theme:"light-3",
+          callbacks:{  
+             onTotalScroll:function(){
+                //console.log('滚动到底部啦！')
+				//alert("aa");
+				//for(var i=0;i<20;i++){
+					$(".posterList .mCSB_container").append(data);
+					
+					//}
+
+             },
+             onTotalScrollOffset:50,
+             whileScrollingInterval:10
+          }
+          
+        });
+		$(".addPath .popDisk").mCustomScrollbar({
+          //scrollButtons:{enable:true},
+		  autoHideScrollbar:true,
+        });
+		$(".addPath .popFolder").mCustomScrollbar({
+          //scrollButtons:{enable:true},
+		  autoHideScrollbar:true,
+        });
+		
+		
+	})	
+
+	</script>
+</body>
+</html>

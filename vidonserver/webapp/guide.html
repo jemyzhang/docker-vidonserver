@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VidOn.me</title>
+<link rel="shortcut icon" href="/favicon.ico" >
+<script>
+  var AppVersion = 123456;
+  var array = window.location.href.split("?"); 
+  if ( array.length > 1 ) {
+    AppVersion = array[1];
+  }  
+
+  var str ='<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css?'+ AppVersion +'">';
+  str += '<link rel="stylesheet" type="text/css" href="css/global.css?' + AppVersion + '">';
+  str += '<script type="text/javascript" src="js/vidon.me.guide.launcher.js?' + AppVersion + '"></scr' + 'ipt>';
+  
+  document.write(str);
+</script>
+</head>
+<body>
+
+  <div class="containter guide">
+    <div class="header">  <div class="logoblock">
+     <a class="logo" href="/"><img src="images/logo_new.png" width="163" height="32" /></a>
+    </div> </div>
+    <div class="content">
+      <div class="guideMenu">
+        <ul class="clearfix">
+          <li class="selected no1"><span>1</span><b  trans_value="index_1">服务器命名</b></li>
+          <li class="linethrough"></li>
+          <li class="no2"><span>2</span><b  trans_value="index_2">选择媒体类型</b></li>
+          <li class="linethrough"></li>
+          <li class="no3"><span>3</span><b  trans_value="index_3">添加管理路径</b></li>
+        </ul>
+      </div>
+      <div class="slideblock">
+        <div class="slides">
+          <div class="slide show setUp1 setUp" >
+            <h3  trans_value="index_4">欢迎使用vidOn Server</h3>
+            <P  trans_value="index_5">威动服务器出现是为了帮助您管理数字媒体，将他们自动归类，同时还提供便捷的数字媒体浏览方式，告别过去繁琐的查找，就是现在：</P>
+            <div class="int"> <img src="images/guide/img1.png" width="800" height="178" >
+            <p  style="text-align:center;" trans_value="index_149"></p></div>
+            <a href="javascript:;" class="setUp2btn btn btn-blue"  trans_value="index_6">下一步</a> </div>
+          <div class="slide setUp2  setUp">
+            <h3 trans_value="index_7">选择您需要管理的数字媒体类型</h3>
+            <p trans_value="index_172">请告诉威动服务器您需要管理的数字媒体类型，这样威动会准确高效的帮您去找到他们，添加媒体信息并管理起来</p>
+            <div class="selectedMedia " id="selectedMedia" >
+            <a href="javascript:;" id="commVideo" class="commVideo fillet10 video1-bg" ></a>
+            <a href="javascript:;" id="perMedia" class="perMedia fillet10 video2-bg"></a>
+            <h4 class="commVideo-tit" trans_value="index_8">Movies, TV Shows <br> and Music Videos</h4>
+            <h4 class="perMedia-tit" trans_value="index_9">Photos and <br>Personal Videos</h4>
+            <div class="clr"></div>
+            <P class="tips"><span trans_value="index_10">包含市场发行的电影、电视剧等其它商业视频，威动服务器会自动智能分类管理展示给您。</span><br><span trans_value="index_11">智能分类需要一定规则，<a href="javascript:;" class="a">点击查看详情</a></span></P>
+            <P class="tips" trans_value="index_12">包含用户个人拍摄的照片和视频，威动服务器会自动整理展示给您。</P>
+            <div class="clr"></div>
+          </div>
+           <a href="javascript:;" class="setUp3btn  btn btn-disable" trans_value="index_6" id="setUp3btn">下一步</a> </div>
+        <div class="slide setUp3  setUp">
+          <h3 id="WzdAddPathTitle">为您的电影库添加管理路径</h3>
+          <p trans_value="index_15">已选路径</p>
+          <div class="int2" style="position:relative;">
+            <input  style="width:700px; padding-right:60px;" type="text" value="" name="selectedPath" id="selectedPath" />
+            <a href="javascript:;"  id="addPathbtn" class="addPathbtn" title="添加路径" trans_title="index_52"></a> </div>
+          <br>
+          <a href="javascript:;" class=" btn btn-disable" id="btnWzdOK"  trans_value="index_150">完成</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<div class="tckuang addPath fillet4 addTemplate" tpl_name="PathBrowser"></div>
+<div class="tckuang addNetPath fillet4 addhtml" url="template/popaddnetpath.html"></div>
+<div class="tckuang addNetwork fillet10 addhtml"  url="template/popaddnetwork.html"> </div>
+<div class="tckuang poplogin fillet10 addhtml" url="template/poplogin.html"> </div>
+<div class="tckuang popabout fillet10 addhtml" url="template/popabout.html"></div>
+<div class="tckuang popsetup fillet10 addhtml" url="template/popsetup.html"></div>
+<div class="tckuang confirmSave fillet10 addhtml" url="template/popconfirmsave.html"></div>
+<div class="addTemplate tckuang  fillet4" tpl_name="CommonPopDialog" id="CommonPopDialog"></div>
+<script>
+  $(function(){
+      loadHtml();
+
+      new CorePathBrowser;
+      
+      var languageType = getCookie("languageType");
+      if ( languageType != null ) {
+        g_languageType = languageType;
+        loadProperties(languageType);
+        translateHtml();
+      }else{
+        loadProperties( "en" );
+      }
+
+      loadTemplate();
+
+      getServerLanguage(function(){
+        translateHtml();
+      });
+    });
+</script>
+<div class="loadingbg"></div>
+</body>
+</html>

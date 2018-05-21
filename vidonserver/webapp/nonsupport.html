@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VidOn.me</title>
+  <link rel="shortcut icon" href="/favicon.ico" >
+  <link rel="stylesheet" type="text/css" href="css/global.css"></head>
+<body>
+  <div class="containter nonsupport">
+    <div class="header">
+      <div class="logoblock">
+        <a class="logo" href="/">
+          <img src="images/logo.jpg" width="142" height="36" />
+        </a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="nonsupportinner">
+      <p class="big" id="index_49"></p>
+      <P id="index_50"></P>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.i18n.properties-1.0.9.js"></script>
+  <script type="text/javascript" src="../js/vidon.me.core.js"></script>
+  <script type="text/javascript" src="../js/vidon.me.rpc.js"></script>
+  <script type="text/javascript" src="../js/vidon.me.utils.js"></script>
+  <script type = "text/javascript" >
+    var g_languageType;
+
+    function translateHtml() {
+      $("#index_49").html($.i18n.prop('index_281'));
+      $("#index_50").html($.i18n.prop('index_282'));
+    };
+
+    function loadMultiLanguage( langType ) {
+      jQuery.i18n.properties({
+        name: 'strings',
+        path: 'i18n/',
+        mode: 'map',
+        language: langType,
+        callback: function() {
+          translateHtml();
+        }
+      });
+    };
+
+    //动态添加css文件
+    var dynamicLoading = {
+      css: function(path) {
+        if (!path || path.length === 0) {
+          throw new Error('argument "path" is required !');
+        }
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.href = path;
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        head.appendChild(link);
+      }
+    };
+
+    function changeLanguage(language) {
+      var locale = g_languageType;
+
+      if (language == "Chinese (Simple)") {
+        locale = "zh-cn";
+        currentLanguage = "zh_CN";
+        dynamicLoading.css("../css/global_zh.css");
+      } else if (language == "Chinese (Traditional)") {
+        locale = "zh-tw";
+        currentLanguage = "zh_tw";
+        dynamicLoading.css("../css/global_zh.css");
+      } else if (language == "German") {
+        locale = "de";
+        currentLanguage = "de";
+        dynamicLoading.css("../css/global_de.css");
+      } else if (language == "French") {
+        locale = "fr";
+        currentLanguage = "fr";
+        dynamicLoading.css("../css/global_fr.css");
+      } else if (language == "Japanese") {
+        locale = "jp";
+        currentLanguage = "jp";
+        dynamicLoading.css("../css/global_ja.css");
+      } else if (language == "Portuguese (Brazil)") {
+        locale = "pt";
+        currentLanguage = "en_US";
+        dynamicLoading.css("../css/global_pt.css");
+      } else if (language == "Spanish" || language == "Spanish (Mexico)") {
+        locale = "es";
+        currentLanguage = "es";
+        dynamicLoading.css("../css/global_es.css");
+      } else if (language == "Korean") {
+        locale = "kr";
+        currentLanguage = "en_US";
+        dynamicLoading.css("../css/global_ko.css");
+      } else if (language == "Swedish") {
+        locale = "se";
+        currentLanguage = "en_US";
+        dynamicLoading.css("../css/global_se.css");
+      } else if (language == "Thailand") {
+        locale = "th";
+        currentLanguage = "en_US";
+        dynamicLoading.css("../css/global_th.css");
+      } else if (language == "English" || language == "") {
+        locale = "en";
+        currentLanguage = "en_US";
+      }
+
+
+      if (g_languageType != locale) {
+        g_languageType = locale;
+        setCookie("languageType", locale, 30);
+        loadMultiLanguage( locale )
+      };
+    }
+
+    $(function() {
+      var elem = $(".nonsupportinner");
+      elem.css("margin-top", ($(window).height() - elem.height() - 60) / 2 + $(window).scrollTop() + "px");
+      $(window).resize(function() {
+        elem.css("margin-top", ($(window).height() - elem.height() - 60) / 2 + $(window).scrollTop() + "px");
+      });
+
+      g_languageType = getCookie("languageType");
+
+      loadMultiLanguage( g_languageType );
+      
+      vidonme.rpc.request({
+        'context': this,
+        'method': 'VidOnMe.GetSystemSetting',
+        'params': {
+          "key": "language.default"
+        },
+        'success': function(data) {
+          if (data && data.result) {
+            changeLanguage(data.result.val);
+          }
+        }
+      });
+    }) 
+    </script>
+</body>
+</html>

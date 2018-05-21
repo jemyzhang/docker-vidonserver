@@ -1,0 +1,1363 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="canonical" href="http://vidonme.cn/" />
+  <link rel="icon" href="docs/images/favicon.ico" />
+  <title>Vidon.me Web ServerAPI</title>
+  <style>
+    body {
+      font-size: 14px;
+      line-height: 22px;
+      font-family: Helvetica Neue, Helvetica, Arial;
+      background: #f4f4f4 url(docs/images/background.png);
+    }
+    .interface {
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
+    }
+    div#sidebar {
+      background: #fff;
+      position: fixed;
+      z-index: 10;
+      top: 0; left: 0; bottom: 0;
+      width: 240px;
+      overflow-y: auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 15px 0 30px 30px;
+      border-right: 1px solid #bbb;
+      box-shadow: 0 0 20px #ccc; -webkit-box-shadow: 0 0 20px #ccc; -moz-box-shadow: 0 0 20px #ccc;
+    }
+      a.toc_title, a.toc_title:visited {
+        display: block;
+        color: black;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+        a.toc_title:hover {
+          text-decoration: underline;
+        }
+        #sidebar .version {
+          font-size: 10px;
+          font-weight: normal;
+        }
+      ul.toc_section {
+        font-size: 11px;
+        line-height: 14px;
+        margin: 5px 0 0 0;
+        padding-left: 0px;
+        list-style-type: none;
+        font-family: Lucida Grande;
+      }
+        .toc_section li {
+          cursor: pointer;
+          margin: 0 0 3px 0;
+        }
+          .toc_section li a {
+            text-decoration: none;
+            color: black;
+          }
+            .toc_section li a:hover {
+              text-decoration: underline;
+            }
+    div.container {
+      position: relative;
+      width: 630px;
+      margin: 40px 0 50px 290px;
+    }
+    img#logo {
+      width: 450px;
+      height: 80px;
+    }
+    div.run {
+      position: absolute;
+      right: 15px;
+      width: 26px; height: 18px;
+      background: url('docs/images/arrows.png') no-repeat -26px 0;
+    }
+      div.run:active {
+        background-position: -51px 0;
+      }
+    p, div.container ul {
+      margin: 25px 0;
+      width: 550px;
+    }
+      p.warning {
+        font-size: 12px;
+        line-height: 18px;
+        font-style: italic;
+      }
+      div.container ul {
+        list-style: circle;
+        padding-left: 15px;
+        font-size: 13px;
+        line-height: 18px;
+      }
+        div.container ul li {
+          margin-bottom: 10px;
+        }
+        div.container ul.small {
+          font-size: 12px;
+        }
+    a, a:visited {
+      color: #444;
+    }
+    a:active, a:hover {
+      color: #000;
+    }
+    a.punch {
+      display: inline-block;
+      background: #4162a8;
+      border-top: 1px solid #38538c;
+      border-right: 1px solid #1f2d4d;
+      border-bottom: 1px solid #151e33;
+      border-left: 1px solid #1f2d4d;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+      -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+      -ms-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+      -o-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+      box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+      color: #fff;
+      font: bold 14px "helvetica neue", helvetica, arial, sans-serif;
+      line-height: 1;
+      margin-bottom: 15px;
+      padding: 8px 0 10px 0;
+      text-align: center;
+      text-shadow: 0px -1px 1px #1e2d4d;
+      text-decoration: none;
+      width: 405px;
+      -webkit-background-clip: padding-box; }
+      a.punch:hover {
+        -webkit-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+        -moz-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+        -ms-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+        -o-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+        box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+        cursor: pointer; }
+      a.punch:active {
+        -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+        -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+        -ms-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+        -o-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+        box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+        margin-top: 5px; margin-bottom: 10px }
+    a img {
+      border: 0;
+    }
+    a.travis-badge {
+      display: block;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      padding-top: 20px;
+    }
+      h2 {
+        font-size: 22px;
+      }
+    b.header {
+      font-size: 18px;
+      line-height: 35px;
+    }
+    span.alias {
+      font-size: 14px;
+      font-style: italic;
+      margin-left: 20px;
+    }
+    table {
+      margin: 15px 0 0; padding: 0;
+    }
+      tr, td {
+        margin: 0; padding: 0;
+      }
+        td {
+          padding: 0px 15px 5px 0;
+        }
+        table .rule {
+          height: 1px;
+          background: #ccc;
+          margin: 5px 0;
+        }
+    code, pre, tt {
+      font-family: Monaco, Consolas, "Lucida Console", monospace;
+      font-size: 12px;
+      line-height: 18px;
+      font-style: normal;
+    }
+      tt {
+        padding: 0px 3px;
+        background: #fff;
+        border: 1px solid #ddd;
+        zoom: 1;
+      }
+      code {
+        margin-left: 80px;
+      }
+      pre {
+        font-size: 12px;
+        padding: 2px 0 2px 15px;
+        border: 4px solid #bbb; border-top: 0; border-bottom: 0;
+        margin: 0px 0 25px;
+      }
+      img.example_image {
+        margin: 0px auto;
+      }
+        img.example_retina {
+          margin: 20px;
+          box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        }
+    @media only screen and (-webkit-max-device-pixel-ratio: 1) and (max-width: 600px),
+           only screen and (max--moz-device-pixel-ratio: 1) and (max-width: 600px) {
+      div#sidebar {
+        display: none;
+      }
+      img#logo {
+        max-width: 450px;
+        width: 100%;
+        height: auto;
+      }
+      div.container {
+        width: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+        p, div.container ul {
+          width: auto;
+        }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 640px),
+          only screen and (-o-min-device-pixel-ratio: 3/2) and (max-width: 640px),
+          only screen and (min-device-pixel-ratio: 1.5) and (max-width: 640px) {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      div#sidebar {
+        -webkit-overflow-scrolling: initial;
+        position: relative;
+        width: 90%;
+        height: 120px;
+        left: 0;
+        top: -7px;
+        padding: 10px 0 10px 30px;
+        border: 0;
+      }
+      img#logo {
+        width: auto;
+        height: auto;
+      }
+      div.container {
+        margin: 0;
+        width: 100%;
+      }
+      p, div.container ul {
+        max-width: 98%;
+        overflow-x: scroll;
+      }
+      table {
+        position: relative;
+      }
+        tr:first-child td {
+          padding-bottom: 25px;
+        }
+        td.text {
+          line-height: 12px;
+          padding: 0;
+          position: absolute;
+          left: 0;
+          top: 48px;
+        }
+        tr:last-child td.text {
+          top: 122px;
+        }
+      pre {
+        overflow: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar" class="interface">
+
+    <a class="toc_title" href="#">
+      VidOnMe Web Server API <span class="version">(1.0.0)</span>
+    </a>
+    <ul class="toc_section">
+      <li>&raquo; <a href="https://github.com/vidonme/webapp">GitHub Repository</a></li>
+      <!--<li>&raquo; <a href="docs/backbone.html">Annotated Source</a></li>-->
+    </ul>
+
+    <a class="toc_title" href="#introduction">
+      Introduction
+    </a>
+
+    <a class="toc_title" href="#Wizzard">
+      Wizzard
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#Wizzard.IsWizzardEnsabled">Wizzard.IsWizzardEnsabled</a></li>    	
+      <li>– <a href="#Wizzard.SetWizzardDisabled">Wizzard.SetWizzardDisabled</a></li>
+    </ul>
+    <a class="toc_title" href="#Libraries">
+      Libraries
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#VidOnMe.GetLibraries">VidOnMe.GetLibraries</a></li>
+      <li>– <a href="#VidOnMe.GetLibraryDetail">VidOnMe.GetLibraryDetail</a></li>
+      <li>– <a href="#VidOnMe.AddPathToLibrary">VidOnMe.AddPathToLibrary</a></li>
+      <li>– <a href="#VidOnMe.DeletePathFromLibrary">VidOnMe.DeletePathFromLibrary</a></li>
+      <li>– <a href="#VidOnMe.StartScan">VidOnMe.StartScan</a></li>       
+    </ul>        
+     <a class="toc_title" href="#Directory">
+      Directory
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#VidOnMe.AddNetDirectory">VidOnMe.AddNetDirectory</a></li>
+      <li>– <a href="#VidOnMe.GetDirectory">VidOnMe.GetDirectory</a></li>               
+    </ul>     
+     <a class="toc_title" href="#Settings">
+      Settings
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#VidOnMe.GetServerName">VidOnMe.GetServerName</a></li>
+      <li>– <a href="#VidOnMe.SetServerName">VidOnMe.SetServerName</a></li> 
+      <li>– <a href="#VidOnMe.CheckTranscodeOption">VidOnMe.CheckTranscodeOption</a></li>
+      <li>– <a href="#VidOnMe.SetTranscodeOption">VidOnMe.SetTranscodeOption</a></li>        
+      <li>– <a href="#VidOnMe.GetServerInfo">VidOnMe.GetServerInfo</a></li>        	
+      <li>– <a href="#VidOnMe.GetSystemSetting">VidOnMe.GetSystemSetting</a></li>
+      <li>– <a href="#VidOnMe.GetAllClients">VidOnMe.GetAllClients</a></li>
+      <li>– <a href="#VidOnMe.GetSystemSettingForAll">VidOnMe.GetSystemSettingForAll</a></li>      
+      <li>– <a href="#VidOnMe.SetSystemSetting">VidOnMe.SetSystemSetting</a></li>
+    	<li>– <a href="#VidOnMe.SetDefaultLanguageForScraper">VidOnMe.SetDefaultLanguageForScraper</a></li>   	    
+    </ul>
+ 
+    <a class="toc_title" href="#Upgrade">
+      Upgrade
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#VidOnMe.Upgrade_GetState">VidOnMe.Upgrade_GetState</a></li>
+      <li>– <a href="#VidOnMe.Upgrade_Install">VidOnMe.Upgrade_Install</a></li> 
+      <li>– <a href="#VidOnMe.Upgrade_Download">VidOnMe.Upgrade_Download</a></li>             
+    </ul>
+          
+    <a class="toc_title" href="#Users">
+      Users
+    </a>
+    <ul class="toc_section">    
+      <li>– <a href="#VidOnMe.GetAuthUserInfo">VidOnMe.GetAuthUserInfo</a></li> 
+      <li>– <a href="#VidOnMe.LoginAuth">VidOnMe.LoginAuth</a></li>          
+    </ul>       
+    
+    <a class="toc_title" href="#Scraper">
+      Scraper
+    </a>
+    <ul class="toc_section">    
+      <li>– <a href="#VidOnMe.GetLastScraperStatistics">VidOnMe.GetLastScraperStatistics</a></li>  
+      <li>– <a href="#VidOnMe.GetCurrentScraperState">VidOnMe.GetCurrentScraperState</a></li>   
+    </ul>  
+    
+    <a class="toc_title" href="#Movies">
+      Movies
+    </a>     
+    <ul class="toc_section">    
+      <li>– <a href="#VideoLibrary.GetMovies">VideoLibrary.GetMovies</a></li> 
+    </ul>  
+      
+    <a class="toc_title" href="#TVShows">
+      TV Shows
+    </a>     
+    <ul class="toc_section">    
+      <li>– <a href="#VideoLibrary.GetTVShows">VidOnMe.GetTVShows</a></li> 
+    </ul>
+ 
+    <a class="toc_title" href="#PrivateVideos">
+      Private Videos
+    </a>     
+    <ul class="toc_section">    
+      <li>– <a href="#VideoLibrary.GetPrivateVideos">VideoLibrary.GetPrivateVideos</a></li> 
+    </ul>
+<!--      
+    <a class="toc_title" href="#Picture">
+      Picture
+    </a>
+    <ul class="toc_section">
+      <li>– <a href="#PictureLibrary.GetPictureBackupDevicesV2">PictureLibrary.GetPictureBackupDevicesV2</a></li>
+      <li>– <a href="#PictureLibrary.GetBackupDetailsV2">PictureLibrary.GetBackupDetailsV2</a></li>
+      <li>– <a href="#PictureLibrary.UpdatePhotoLibraryV2">PictureLibrary.UpdatePhotoLibraryV2</a></li>
+    </ul>  
+         
+    <a class="toc_title" href="#Players">
+      Players
+    </a>     
+    <ul class="toc_section">    
+      <li>– <a href="#Player.Open">Player.Open</a></li> 
+    </ul>    
+       
+    <a class="toc_title" href="#Unknown">
+      Unknown
+    </a>     
+    <ul class="toc_section">    
+      <li>– <a href="#VidOnMe.getMethod">VidOnMe.getMethod</a></li> 
+    </ul>  
+-->             
+  </div>
+
+  <div class="container">
+
+    <p>
+      <img id="logo" src="docs/images/logo_new.png" alt="Vidonme" />
+    </p>
+
+    <p>
+      <b>VidOn.me Server</b> gives structure to web applications
+      by providing a rich API of enumerable functions,
+      with declarative , and connects it all to your existing API 
+      over a RESTful JSON interface.
+    </p>
+
+    <p>
+      The project is <a href="https://github.com/vidonme/webapp/">hosted on GitHub</a>,
+    </p>
+
+    <p>
+      You can report bugs and discuss features on the
+      <a href="https://github.com/vidonme/webapp/">GitHub issues page</a>,
+      add pages to the <a href="https://github.com/vidonme/webapp/">wiki</a>.
+    </p>
+
+    <h2 id="introduction">Introduction</h2>
+
+    <p>
+      When working on a web application that involves a lot of JavaScript, one
+      of the first things you learn is to stop tying your data to the DOM. It's all
+      too easy to create JavaScript applications that end up as tangled piles of
+      jQuery selectors and callbacks, all trying frantically to keep data in
+      sync between the HTML UI, your JavaScript logic, and the database on your
+      server. For rich client-side applications, a more structured approach
+      is often helpful.
+    </p>
+
+    <h2 id="Wizzard">Wizzard</h2><tt>wizzard</tt>
+
+    <p>
+      <b>Wizzards</b> is a module that give the user a wizzard to set the system rapidly for using system. 
+    </p>
+
+    <p id="Wizzard.IsWizzardEnsabled">
+      <b class="header">Wizzard.IsWizzardEnsabled</b>
+      </br><tt>GET&nbsp;/wizzard/status</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.IsWizzardEnsabled"
+}
+<b>Response</b>
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "ret": true,
+  }
+}
+</pre>
+
+    <p id="Wizzard.SetWizzardDisabled">
+      <b class="header">Wizzard.SetWizzardDisabled</b>
+      <br /><tt>POST&nbsp;/wizzard/status</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.SetWizzardDisabled"
+}
+<b>Response</b>
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "ret": true,
+  }
+}
+</pre>
+
+		<h2 id="Libraries">Libraries</h2>
+    <p>
+      <b>Libraries</b>.............
+    </br>
+      <tt>Get</tt> <tt>Create</tt> <tt>Update</tt> <tt>Delete</tt> <tt>Options(addpath)</tt> <tt>Options(removepath)</tt>
+    </p>		
+		
+    <p id="VidOnMe.GetLibraries">
+      <b class="header">VidOnMe.GetLibraries</b>
+      <br /><tt>GET&nbsp;/libraries</tt>	
+
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.GetLibraries"
+}
+<b>Response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "libraries": [
+            {
+                "LibraryId": 1,
+                "type": "movie",
+                "name": "Movie"
+            },
+            {
+                "LibraryId": 2,
+                "type": "movie",
+                "name": "Cartoons"
+            }   
+        ],
+        "ret": true
+    }
+}
+</pre>
+
+    <p id="VidOnMe.GetLibraryDetail">
+      <b class="header">VidOnMe.GetLibraryDetail</b>
+      <br /><tt>GET&nbsp;/libraries/{libID}</tt>	
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.GetLibraryDetail",
+  "params": {
+    "LibraryId": 2
+  }
+}
+<b>Response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ret": true,
+        "LibraryId": 2,
+        "type": "movie",
+        "name": "Cartoons",
+        "paths": [
+            {
+                "PathId": 1,
+                "path": "D:\movie"
+            },
+            {
+                "PathId": 2,
+                "path": "E:\movie\cartoons"
+            }   
+        ]           
+    }
+}
+</pre>
+
+    <p id="VidOnMe.AddPathToLibrary">
+      <b class="header">VidOnMe.AddPathToLibrary</b>
+      <br /><tt>POST&nbsp;/libraries/{LibID}/path</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.AddPathToLibrary",
+  "params": {
+    "LibraryId": 3,
+    "path": "D:\movie"
+  }
+}
+<b>Response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ret": true,
+        "LibraryId": 3,
+        "PathId": 1
+    }
+}
+</pre> 
+
+    <p id="VidOnMe.DeletePathFromLibrary">
+      <b class="header">VidOnMe.DeletePathFromLibrary</b>
+      <br /><tt>DELETE&nbsp;/libraries/{LibID}/path</tt>
+    </p>
+
+<pre class="runnable">
+<b>request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.DeletePathFromLibrary",
+  "params": {
+    "LibraryId": 3,
+    "PathId": 1
+  }
+}
+<b>response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ret": true
+    }
+}
+</pre> 
+
+    <p id="VidOnMe.StartScan">
+      <b class="header">VidOnMe.StartScan </b>
+      <br /><tt>POST&nbsp;/libraries/scan</tt>
+    </p>
+<pre>
+<b>Request</b>
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "VidOnMe.StartScan",
+  "params": {
+    "LibraryId": 3
+  }
+}
+
+<b>Response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ret": true
+    }
+}
+</pre>
+
+    <h2 id="Directory">Directory</h2>
+
+    <p>
+      <b>Directory</b> is a module that ...
+      </br>
+      <tt>Add</tt> <tt>Update</tt> <tt>Delete</tt> <tt>AddNetDirectoryEx</tt>
+    </p>
+    
+    <p id="VidOnMe.GetDirectory">
+      <b class="header">VidOnMe.GetDirectory</b>
+      <br /><tt>GET&nbsp;/directories</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetDirectory",
+  "id":1,
+  "params":{
+    "mask":"/",
+    "directory":""
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "err":"OK",
+    "filelist":[{
+       "datetime":"1601-01-01 00:00:00",
+       "drivetype":1,
+       "isFolder":true,
+       "path":"C:",
+       "size":0,
+       "title":"C: (System)"
+     }]
+    "ret":true
+  }
+}
+</pre>	    
+    <p id="VidOnMe.AddNetDirectory">
+      <b class="header">VidOnMe.AddNetDirectory</b>
+      <br /><tt>POST&nbsp;/directories</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.AddNetDirectory",
+  "id":1,
+  "params":{
+    "directory":"nfs://10.10.2.100"
+  }
+}
+response
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "err":"OK",
+    "ret":true
+  }
+}
+</pre>	 
+   
+    <h2 id="Settings">Settings</h2>
+
+    <p>
+      <b>Settings</b> is a module that ...
+    </p>	
+
+    <p id="VidOnMe.GetServerName">
+      <b class="header">VidOnMe.GetServerName</b>
+      <br /><tt>GET&nbsp;/settings/servername</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetServerName",
+  "id":1,
+  "params":[]
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "name":"威动服务器",
+    "ret":true
+  }
+}
+</pre>
+
+    <p id="VidOnMe.SetServerName">
+      <b class="header">VidOnMe.SetServerName</b>
+      <br /><tt>POST&nbsp;/settings/servername</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.SetServerName",
+  "id":1,
+  "params":{
+    "name":"xxx"
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true
+  }
+}    
+</pre>
+
+    <p id="VidOnMe.CheckTranscodeOption">
+      <b class="header">VidOnMe.CheckTranscodeOption</b>
+      <br /><tt>GET&nbsp;/settings/transcode</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.CheckTranscodeOption",
+  "id":1,
+  "params":[]
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "hardCodecSetup":true,
+    "hardCodecSupport":true
+  }
+}   
+</pre>
+  
+    <p id="VidOnMe.SetTranscodeOption">
+      <b class="header">VidOnMe.SetTranscodeOption</b>
+      <br /><tt>POST&nbsp;/settings/transcode</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.SetTranscodeOption",
+  "id":1,
+  "params":{
+    "config":false
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true
+  }
+}        
+</pre>       
+
+    <p id="VidOnMe.GetServerInfo">
+      <b class="header">VidOnMe.GetServerInfo</b>
+      <br /><tt>GET&nbsp;/settings/server</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetServerInfo",
+  "id":1,"params":[]
+}  
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true,
+    "serverip":"10.10.2.196",
+    "srvversion":"2100"
+  }
+}   
+</pre>  
+       
+    <p id="VidOnMe.GetAllClients">
+      <b class="header">VidOnMe.GetAllClients</b>
+      <br /><tt>GET&nbsp;/settings/clients</tt>
+    </p>
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetAllClients",
+  "id":1,
+  "params":[]
+} 
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":false
+  }
+}  
+</pre> 
+    <p id="VidOnMe.GetSystemSettingForAll">
+      <b class="header">VidOnMe.GetSystemSettingForAll</b>
+      <br /><tt>GET&nbsp;/settings/all</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetSystemSettingForAll",
+  "id":1,
+  "params":[]
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true,
+    "settings":[
+      {"key":"account.account","val":""},
+      {"key":"account.password","val":""},
+      {"key":"db.host","val":"127.0.0.1"},
+      {"key":"db.name","val":"VMS2"},
+      {"key":"db.pass","val":"root"},
+      {"key":"db.port","val":"3360"},
+      {"key":"db.type","val":"mysql"},
+      {"key":"db.user","val":"root"},
+      {"key":"discovery.ssdp","val":"true"},
+      {"key":"generic.autostart","val":"true"},
+      {"key":"generic.autoupgrade","val":"true"},
+      {"key":"generic.daytime","val":"3"},
+      {"key":"generic.rebuildbackupdatabase","val":"true"},
+      {"key":"generic.tmpfiledir","val":"C:/Users/GUI~1.YAN/AppData/Local/Temp/"},
+      {"key":"generic.updatetest","val":"false"},
+      {"key":"generic.usrdatadir","val":"C:/Users/Public/Documents/VMS2/userdata/"},
+      {"key":"generic.weekday","val":"0"},
+      {"key":"language.auto","val":"true"},
+      {"key":"language.default","val":"Chinese (Simple)"},
+      {"key":"library.autoupdate","val":"true"},
+      {"key":"library.autoupdatetimespan","val":"24"},
+      {"key":"library.defaultlanguageforscraper","val":"zh"},
+      {"key":"library.updateonstart","val":"true"},
+      {"key":"metaanalysis.mintimeofplaylist","val":"1200000"},
+      {"key":"metaanalysis.port","val":"58000"},
+      {"key":"metaanalysis.screenshotheight","val":"360"},
+      {"key":"metaanalysis.screenshottime","val":"100000"},
+      {"key":"metaanalysis.screenshottimespan","val":"120"},
+      {"key":"metaanalysis.screenshotwidth","val":"640"},
+      {"key":"name.isdefault","val":"true"},
+      {"key":"name.value","val":"VidOn Server"},
+      {"key":"picture.defaultbackuppath","val":""},
+      {"key":"promotion.display","val":"true"},
+      {"key":"webserver.pass","val":""},
+      {"key":"webserver.port","val":"32080"},
+      {"key":"webserver.user","val":""},
+      {"key":"wizzard.allow","val":"false"}
+    ]
+  }
+}
+</pre>        	
+
+    <p id="VidOnMe.SetSystemSetting">
+      <b class="header">VidOnMe.SetSystemSetting</b>
+      <br /><tt>POST&nbsp;/settings</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.SetSystemSetting",
+  "id":1,
+  "params":{
+    "key":"library.autoupdatetimespan",
+    "val":"12"
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "changes":"",
+    "checkresult":"alreadynewversion",
+    "currversion":"2100",
+    "newversion":"",
+    "progress":"0",
+    "state":"checkversionfin"
+  }
+}  
+</pre>            
+    <p id="VidOnMe.SetDefaultLanguageForScraper">
+      <b class="header">VidOnMe.SetDefaultLanguageForScraper</b>
+      <br /><tt>POST&nbsp;/settings/scraper/language</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method":	"VidOnMe.SetDefaultLanguageForScraper"
+    "params": [
+				{
+					"name": "language",
+					"required": true,
+					"type": "string"
+				}
+			]
+}
+
+<b>Response</b>
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "ret": {
+			"required": true,
+			"type": "boolean"
+		}
+}
+</pre>
+
+    <h2 id="Upgrade">Upgrade</h2>
+
+    <p>
+      <b>Upgrade</b> is a module that ...
+    </p>	
+
+    <p id="VidOnMe.Upgrade_GetState">
+      <b class="header">VidOnMe.Upgrade_GetState</b>
+      <br /><tt>POST&nbsp;/upgrade/status</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.Upgrade_GetState",
+  "id":1,
+  "params":[]
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "changes":"",
+    "checkresult":"alreadynewversion",
+    "currversion":"2100",
+    "newversion":"",
+    "progress":"0",
+    "state":"checkversionfin"
+  }
+}
+</pre>
+    <p id="VidOnMe.Upgrade_Install">
+      <b class="header">VidOnMe.Upgrade_Install</b>
+      <br /><tt>POST&nbsp;/upgrade/install</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"Upgrade_Install",
+  "id":1,
+  "params":[] 
+  "permission": "ReadData"
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true
+  }
+}
+</pre>      
+
+    <p id="VidOnMe.Upgrade_Download">
+      <b class="header">VidOnMe.Upgrade_Download</b>
+      <br /><tt>POST&nbsp;/upgrade/download</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"Upgrade_Download",
+  "id":1,
+  "params":[] 
+  "permission": "ReadData"
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "ret":true
+  }
+}
+</pre>        
+
+    <h2 id="Users">Users</h2>    
+    <p>
+      <b>Users</b> is a module that ...
+    </p>	
+
+    <p id="VidOnMe.GetAuthUserInfo">
+      <b class="header">VidOnMe.GetAuthUserInfo</b>
+      <br /><tt>GET&nbsp;/users</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.GetAuthUserInfo",
+  "id":1,
+  "params":{}
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "avatar":"",
+    "email":"xxx.xxx@goland.cn",
+    "expiredate":"",
+    "password":"df891da08741a12ad9870990311e1ffd",
+    "ret":true,
+    "subscribed":false,
+    "username":"xxxx"
+  }
+}
+</pre>
+    <p id="VidOnMe.LoginAuth">
+      <b class="header">VidOnMe.LoginAuth</b>
+      <br /><tt>POST&nbsp;/login</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VidOnMe.LoginAuth",
+  "id":1,
+  "params":{
+    "username":"xxx",
+    "password":"df891da08741a12ad9870990311e1ffd",
+    "country":"cn"
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "avatar":"",
+    "email":"xxx.xxx@goland.cn",
+    "error":"OK",
+    "expiredate":"",
+    "ret":true,
+    "subscribed":false,
+    "username":"xxxx"
+  }
+}
+</pre>
+
+    <h2 id="Scraper">Scraper</h2>
+
+    <p>
+      <b>Scripper</b> is a module that ...
+    </p>
+
+
+    <p id="VidOnMe.GetLastScraperStatistics">
+      <b class="header">VidOnMe.GetLastScraperStatistics</b>
+      <br /><tt>GET&nbsp;/scraper/laststatistics</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "VidOnMe.GetLastScraperStatistics",
+    "params": {
+    }
+}
+
+<b>Response</b>
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "total": {
+            "failed_amounts": 10,
+            "success_amounts": 100
+        }
+    }
+}
+</pre> 
+
+     <p id="VidOnMe.GetCurrentScraperState">
+      <b class="header">VidOnMe.GetCurrentScraperState</b>
+      <br /><tt>GET&nbsp;/scraper/status</tt>
+    </p>
+
+<pre class="runnable">
+<b>Request</b>
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "VidOnMe.GetCurrentScraperState",
+    "params": {
+    }
+}
+<b>Response</b>    
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "total": {
+            "amounts": 100,
+            "finished": 10,
+            "state": "ready/scanning/scraping/finish"
+        }
+    }
+}
+</pre>
+
+    <h2 id="Movies">Movies</h2>
+
+    <p>
+      <b>Movies</b> is a module that ...
+    </p>
+
+    <p id="VideoLibrary.GetMovies">
+      <b class="header">VideoLibrary.GetMovies</b>
+      <br /><tt>GET&nbsp;/movies</tt>
+    </p>
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VideoLibrary.GetMovies",
+  "id":1,
+  "params":{
+    "limits":{"start":0,"end":1},
+    "sort":{"ignorearticle":false,"order":"descending","method":"dateadded"},
+    "properties":["file","year","thumbnail","runtime","title"]
+  }
+}
+<b>Response</b>    
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "limits":{"end":1,"start":0,"total":13},
+    "movies":[{
+      "file":"E:/MediaLibrary/file.avi",
+      "idfile":97,
+      "meta":"{
+        \"AudioChannel\":\"2.0\",
+        \"AudioCodec\":\"aac\",
+        \"AudioLanguage\":\"\",
+        \"FileFormat\":\"avi\",
+        \"FileType\":\"stVideoFile\",
+        \"MenuMode\":\"\",
+        \"SubLanguage\":\"\",
+        \"SubtitleCodec\":\"\",
+        \"VideoCodec\":\"wmv3\",
+        \"VideoResolution\":\"480p\",
+        \"VideoStandard\":\"\"
+      }",
+      "runtime":"61",
+      "thumbnail":"C:/Users/4b511b5e.jpg",
+      "title":"Temporary File",
+      "year":2014
+    }]
+  }
+}
+</pre>
+
+    <h2 id="TVShows">TVShows</h2>
+
+    <p>
+      <b>TVShows</b> is a module that ...
+    </p>
+
+    <p id="VideoLibrary.GetTVShows">
+      <b class="header">VideoLibrary.GetTVShows</b>
+      <br /><tt>GET&nbsp;/tvshows</tt>
+    </p>
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VideoLibrary.GetTVShows",
+  "id":1,
+  "params":{
+    "sort":{"ignorearticle":false,"order":"descending","method":"dateadded"},
+    "limits":{"start":0,"end":1},
+    "properties":["file","plot","thumbnail","title","year","season","episode"]
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "limits":{"end":1,"start":0,"total":4},
+    "tvshows":[{
+      "fanart":"http://dafdjpg",
+      "idtvshow":4,
+      "meta":"{
+        \"AudioChannel\":\"2.0\",
+        \"AudioCodec\":\"aac\",
+        \"AudioLanguage\":\"\",
+        \"FileFormat\":\"rmvb\",
+        \"FileType\":\"stVideoFile\",
+        \"MenuMode\":\"\",
+        \"SubLanguage\":\"\",
+        \"SubtitleCodec\":\"\",
+        \"VideoCodec\":\"rv40\",
+        \"VideoResolution\":\"480p\",
+        \"VideoStandard\":\"\"
+      }",
+      "plot":"",
+      "thumbnail":"C:/Users/Thumbnails/6/60dcc6ad.jpg",
+      "title":"The X-Files",
+      "year":1993
+    }]
+  }
+}
+</pre>
+
+    <h2 id="PrivateVideos">PrivateVideos</h2>
+
+    <p>
+      <b>PrivateVideos</b> is a module that ...
+    </p>
+
+    <p id="VideoLibrary.GetPrivateVideos">
+      <b class="header">VideoLibrary.GetPrivateVideos</b>
+      <br /><tt>GET&nbsp;/privatevideos</tt>
+    </p>
+<pre class="runnable">
+<b>Request</b>
+{
+  "jsonrpc":"2.0",
+  "method":"VideoLibrary.GetPrivVideos",
+  "id":1,
+  "params":{
+    "limits":{"start":0,"end":1},
+    "sort":{"ignorearticle":false,"order":"descending","method":"dateadded"},
+    "properties":["file","thumbnail","title"]
+  }
+}
+<b>Response</b>
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result":{
+    "limits":{"end":1,"start":0,"total":64},
+    "privvideos":[{
+      "file":"E:/MediaLibrary/faad2-fail.mkv",
+      "idfile":96,
+      "meta":"{
+        \"AudioChannel\":\"5.1\",
+        \"AudioCodec\":\"aac\",
+        \"AudioLanguage\":\"\",
+        \"FileFormat\":\"mkv\",
+        \"FileType\":\"stVideoFile\",
+        \"MenuMode\":\"\",
+        \"SubLanguage\":\"\",
+        \"SubtitleCodec\":\"\",
+        \"VideoCodec\":\"dx50\",
+        \"VideoResolution\":\"480p\",
+        \"VideoStandard\":\"\"
+      }",
+      "runtime":"1451",
+      "thumbnail":"C:/Users/Thumbnails/4/4eb472db.jpg",
+      "title":"faad2-fail"
+    }]
+  }
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>VidOn.me</title>
+	<link rel="shortcut icon" href="/favicon.ico" >
+	<script type="text/javascript" src="sewiseplayer/sewise.player.js"></script>
+	<script>
+		var AppVersion = 123456;
+		var array = window.location.href.split("?"); 
+		if ( array.length > 1 ) {
+			AppVersion = array[1];
+		}  
+
+		var str ='<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css?'+ AppVersion +'"/>';
+		str += '<link rel="stylesheet" type="text/css" href="css/global.css?' + AppVersion + '"/>';
+		str += '<link rel="stylesheet" type="text/css" href="css/introjs.css?' + AppVersion + '"/>';
+		str += '<script type="text/javascript" src="js/vidon.me.launcher.js?' + AppVersion + '"></scr' + 'ipt>';
+
+		document.write(str);
+	</script>
+</head>
+<body>
+	<div class="addhtml" url="template/template_items.html"></div>
+	<div class="containter">
+		<div class="header addTemplate" id="header" tpl_name="headerTpl"></div>
+		<div class="siderbar addTemplate" id="siderbar" tpl_name="siderBar"></div>
+		<div class="content_layer0">
+			<div class="mainblock scrollbar_movie_noload">
+				<div id="pl_layer0" class="posterList addTemplate pl_layer0" tpl_name="indexControl">
+					
+				</div>
+				<a class="backtotop" href="javascript:;"></a>
+			</div>
+		</div>
+		<div class="content_layer1">
+			<div class="editlibrary" id="editlibrary"></div>
+			<div class="clr"></div>
+			<div class="topnavblocktitle" id="topnavblocktitle">
+				<div class="topbtnblock">
+					<!--top buttons( like "edit" "fresh" "move")-->
+				</div>
+				<div class="topshowcontent"></div>
+			</div>
+			<div style="position: absolute;left: 0;top: 53px; bottom: 0;right:0px;">
+				<div class="mainblock scrollbar_movie" >
+					<div id="topnavblock" class="topnavblock">
+						<div class="topfilterinner addTemplate" tpl_name="topFilter"></div>
+						
+						<div class="topsortbar"></div>
+					</div>
+					<div id="pl" class="posterList clearfix"  tpl_name="" >
+						<div style="display:none" class="addTemplate" tpl_name="MovieControl"></div>
+						<div style="display:none" class="addTemplate" tpl_name="TvshowControl"></div>
+						<div style="display:none" class="addTemplate" tpl_name="Video"></div>
+						<div style="display:none" class="addTemplate" tpl_name="ChannelControl"></div>
+						<div style="display:none" class="addTemplate" tpl_name="PhotoControl"></div>
+						<div style="display:none" class="addTemplate" tpl_name="RssControl"></div>
+					</div>
+					<a class="backtotop" href="javascript:;"></a>
+				</div>
+			</div>
+		</div>
+		<div class="content_layer2">
+			<div class="mainblock userdefined_scrollbar_btn">
+				<div id="pl_layer2" class="posterList"></div>
+			</div>
+		</div>
+		<div class="content_layer3 videobg">
+			<div class="mainblock userdefined_scrollbar_btn  masklayer" >
+				<div id="pl_layer3" class="posterList"></div>
+			</div>
+		</div>
+		<div class="content_layer4" style="display:none;">
+			<div class="mainblock userdefined_scrollbar_btn  masklayer" >
+				<div id="pl_layer4" class="posterList"></div>
+			</div>
+		</div>
+		<!--照片-->
+		<div class="content_layer5" style="display:none;">
+			<!--<div class="addTemplate editlibrary" id="editlibrarysearch" tpl_name="editLibrary"></div>-->
+			<div class="searchtopbar"></div>
+			<div style="position: absolute;left: 0;top: 53px; bottom: 0;right:0px;">
+				<div class="mainblock userdefined_scrollbar_btn  masklayer" >
+					<div id="pl_layer5" class="posterList">
+						<div class="addTemplate searchre" tpl_name="searchResult"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--RSS订阅-->
+		<div class="content_layer8" style="display:none;">
+			<div style="position: absolute;left: 0;top: 53px; bottom: 0;right:0;">
+				<div class="mainblock userdefined_scrollbar_btn masklayer" >
+					<div id="pl_layer8" class="posterList">
+						<div class="addTemplate rssorder" tpl_name="RssControl">
+							<div>
+	<ul class="ordertop">
+		<li class="order_list">订阅列表</li>
+		<li>
+			<input type="button" value="添加订阅" class="add_order">
+		</li>
+	</ul>
+	<ul class="thumbnail">
+		<li>
+			<img src="../img/meituan.gif">
+			<p>美团购物推荐</p>
+		</li>
+		<li>
+			<img src="../img/xiecheng.gif">
+			<p>携程旅游推荐</p>
+		</li>
+		<li>
+			<img src="../img/wangyi.gif">
+			<p>网易云音乐</p>
+		</li>
+		<li>
+			<img src="../img/yamaxun.gif">
+			<p>亚马逊购物推荐</p>
+		</li>
+		<li>
+			<img src="../img/taobao.gif">
+			<p>淘宝网购物推荐</p>
+		</li>
+	</ul>
+</div>
+<!-- 取消订阅-->
+<div class="cancel_order" style="display:none;">
+	<h3>取消订阅</h3>
+	<div class="closebtn"></div>
+	<div class="thumbnail">
+		<img src="../img/thumbxc.png">
+		<p>携程旅游推荐</p>
+		<p>http://feed.xiechenglvyou.com/</p>
+	</div>
+	<div class="bottombtn">
+		<button class="cancle">取消</button>
+		<button class="sure">确定</button>
+	</div>
+</div>
+<!-- 添加订阅-->
+<div class="add_order" style="display:none;">
+	<h3>添加订阅</h3>
+	<div class="closebtn"></div>
+	<div class="content">
+		<p>请输入您需要订购的Feed地址</p>
+		<input type="text">
+		<p>名称</p>
+		<input type="text">
+	</div>
+	<div class="bottombtn">
+		<button class="cancle">取消</button>
+		<button class="sure">保存</button>
+	</div>
+</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content_layer6">
+			<div class="mainblock scrollbar_movie">
+				<div id="pl_layer6" class="posterList addTemplate pl_layer6" tpl_name="loginHistoryControl">
+
+				</div>
+			</div>
+		</div>
+		<div class="movieTips"></div>
+	</div>
+   
+    
+
+	<div class="tckuang addPath fillet4 addTemplate" tpl_name="PathBrowser"></div>
+	<div class="tckuang addNetwork fillet4 addhtml"  url="template/popaddnetwork.html"></div>
+	<div class="tckuang confirmDelete fillet4 addhtml" url="template/popconfirmdelete.html"></div>
+
+	<!-- library path manager-->
+	<div class="tckuang addNetPath fillet4 addhtml" url="template/popaddnetpath.html"></div>
+	<div class="tckuang addonShare addshare fillet4 addhtml" url="template/popaddonshare.html"></div>
+
+	<!-- meta
+<div class="tckuang updatemeta fillet4 addhtml" url="template/popupdatemeta.html"></div>
+-->
+<div class="tckuang updatemeta fillet4 addTemplate" tpl_name="MetaInfoControl"></div>
+
+<!-- setting dialog
+<div class="tckuang popsetup fillettop4 addhtml" url="template/popsetup.html"></div>
+-->
+<div class="tckuang popsetup fillettop4 addTemplate" tpl_name="setUp" id="popsetup"></div>
+<div class="tckuang popeditmeta fillettop4 addTemplate" tpl_name="editMeta" id="popeditmeta"></div>
+<div class="tckuang popaddlibrary fillettop4 addTemplate" tpl_name="addLibrary" id="popaddlibrary"></div>
+<div class="tckuang popaboutmeta fillettop4 addTemplate" tpl_name="aboutMeta" id="popaboutmeta"></div>
+
+<!-- common pop dialog
+<div class="tckuang addNoPlay fillet4 addhtml" url="template/popaddnoplay.html"></div>
+<div class="tckuang confirmDelete fillet4 addhtml" url="template/popconfirmdelete.html"></div>
+<div class="tckuang popabout fillet4 addhtml" url="template/popabout.html"></div>
+<div class="tckuang confirmSave fillet4 addhtml" url="template/popconfirmsave.html"></div>
+-->
+<div class="addTemplate tckuang  fillet4" tpl_name="CommonPopDialog" id="CommonPopDialog"></div>
+
+<!-- addon-->
+<div class="tckuang addonDetail fillettop4 addhtml" url="template/popaddondetail.html"></div>
+<div class="tckuang addonMedia  selectMedia fillet4 addhtml" url="template/popaddonmedia.html"></div>
+<div class="tckuang addonChannel addchannel fillet4 addhtml" url="template/popaddonchannel.html"></div>
+
+<!-- login dialog
+<div class="tckuang poplogin fillet4 addhtml" url="template/poplogin.html"></div>
+-->
+<div class="tckuang poplogin fillet4 addTemplate" tpl_name="LoginControl" id="poplogin"></div>
+<div class="tckuang popPlayWindows addTemplate" id="popPlayWindows" tpl_name="PlayWindows" ></div>
+
+<div class="tckuang popFeedback addTemplate" id="popFeedback" tpl_name="feedbackTpl" ></div>
+
+
+<div class="tckuang  fullscreenloading"></div>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.mCustomScrollbar.js"></script>
+<script src="js/intro.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		//showdiv('.addonMedia',1);
+		//showdiv('.addVideo',2);
+		//showdiv('.addPath',3);
+		//showdiv('.addNetwork',4);
+		//showdiv('.addonShare',4);
+		//showdiv('.addonChannel',2);
+		//showdiv('.addNetPath',4);
+		//showdiv('.updatemeta',1);
+		//g_editmeta.clickinit(1);
+		//g_addLibrary.clickinit();
+		 //if (($.browser.msie && $.browser.version >= "8.0")  && (($.browser.mozilla && get_vertion($.browser.version) >= 3.5) || ($.browser.webkit && get_vertion($.browser.version) >= 3.1) || ($.browser.opera && get_vertion($.browser.version) >= 10.5) || ($.browser.safari && get_vertion($.browser.version) >= 3.1))) {
+		 //	alert("aaa");
+
+		// }
+		 //showdiv('.popFeedback',1);
+		 
+
+		 showfullscreen('.fullscreenloading',10);
+		 close_box('.fullscreenloading',10);
+
+
+		 $(".userdefined_scrollbar_btn").mCustomScrollbar({
+		 	autoHideScrollbar: true,
+		 	scrollButtons: {
+		 		enable: true
+		 	},
+		 	theme: "light-3"
+		 });
+		 $(".userdefined_scrollbar").mCustomScrollbar({
+		 	autoHideScrollbar: true
+		 });
+		 $('.photoblock').hide();
+		 $('.channelblock').hide();
+		 $("#selectedPath").delegate('.delete',"click",function(){
+		 	showdiv(".confirmDelete",3);
+		 	$("#deletePath").text($(this).parent().find(".showpath").text());
+				//$(this).parent().remove();
+				
+			})
+		 $(".addonMedia").delegate('#select-media-mode li',"click",function(){
+		 	$(this).addClass("selected").siblings().removeClass("selected");
+		 })
+		 $("#selectedPath").delegate('li',"hover",function(){
+		 	$(this).toggleClass("hover");
+		 })
+		 $(".addVideo").delegate('#addvideook',"click",function(){
+		 	close_box('.addVideo', 2);
+		 	close_box('.addonMedia', 1);
+		 })
+
+		 $(".addNwPath").click(function(){
+		 	showdiv(".addNetwork",4);
+
+		 })
+		 $("#installed_channel .img").click(function(){
+		 	showdiv(".addonDetail",1);
+		 })
+
+		//添加模拟滚动条
+		$("#selectedPathblock").mCustomScrollbar({
+			autoHideScrollbar:true
+		});
+		$(".addPath .popDisk").mCustomScrollbar({
+          //scrollButtons:{enable:true},
+          autoHideScrollbar:true
+      });
+		$(".addPath .popFolder").mCustomScrollbar({
+          //scrollButtons:{enable:true},
+          autoHideScrollbar:true
+      });
+
+		$(".logoblock .logo").live( "click", function(){
+			showHomePage( true );
+			g_index.freshMainPage();
+			g_siderBar.setAutoHide( false );
+		} );
+		
+
+        //修改meta信息的滚动条
+        $("#updatevideo").mCustomScrollbar({
+        	autoHideScrollbar:true
+        }); 
+        var languageType = getCookie("languageType");
+        if ( languageType != null ) {
+        	g_languageType = languageType;
+        	loadProperties(languageType);
+        	translateHtml();
+        }else{
+        	loadProperties( "en" );
+        }
+
+        getServerLanguage(function() {
+        	loadHtml();
+
+        	showHomePage(true);
+
+        	new CoreServerSetting();
+        	g_coreSettings.getSystemSettings();
+
+        	new CoreHomePage;
+        	new MediaSortAndFilter;
+        	new MultiMediaControl;
+        	new MediaLibary;
+        	new CustomLibary;
+        	new ScrollBarControl;
+        	new ScraperControl;
+        	new TopBarControl;
+        	new CorePathBrowser;
+        	new subtitleControl;
+        	new PlayWinowsSetup;
+
+        	g_topBarControl.init();
+
+        	loadTemplate();
+
+        	g_mediaLibary.initLibraryDatas();
+        	g_commonPopDialog.hideBottomTip();
+        });
+
+
+    })	
+
+</script>
+<div class="vidoncover"></div>
+<div class="loadimg">
+	<img id="realimg"></div>
+	<div class="closeimg"></div>
+	<div class="loadingbg"></div>
+</body>
+</html>

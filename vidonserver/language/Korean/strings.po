@@ -1,0 +1,447 @@
+﻿# VidOn.me Media Server language file
+msgid ""
+msgstr ""
+"Project-Id-Version: VidOn.me Media Server\n"
+"Report-Msgid-Bugs-To: http://www.vidonme.com/\n"
+"POT-Creation-Date: 2012-05-04 12:46+0000\n"
+"PO-Revision-Date: 2012-05-28 22:49+0000\n"
+"Last-Translator: VidOn Server Translation Team\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#001"
+msgid "OK"
+msgstr "확인"
+
+msgctxt "#002"
+msgid "Cancel"
+msgstr "취소"
+
+msgctxt "#003"
+msgid "Download"
+msgstr "다운로드"
+
+msgctxt "#004"
+msgid "Background"
+msgstr "백그라운드
+
+msgctxt "#005"
+msgid "Install"
+msgstr "설치"
+
+msgctxt "#006"
+msgid "Upgrade"
+msgstr "업데이트"
+
+msgctxt "#301"
+msgid "Server Manager..."
+msgstr "서버 관리..."
+
+msgctxt "#302"
+msgid "Update Library"
+msgstr "라이브러리 업데이트"
+
+msgctxt "#303"
+msgid "Start Server on Windows Startup"
+msgstr "시스템 기동시Server  자동 실행"
+
+msgctxt "#304"
+msgid "Advance"
+msgstr "고급기능"
+
+msgctxt "#305"
+msgid "Check for Updates"
+msgstr "업데이트 체크"
+
+msgctxt "#306"
+msgid "About..."
+msgstr "상세정보..."
+
+msgctxt "#307"
+msgid "Quit"
+msgstr "종료"
+
+msgctxt "#1001"
+msgid "Current version: "
+msgstr "현재 버전："
+
+msgctxt "#1002"
+msgid "New version: "
+msgstr "새버전："
+
+msgctxt "#1003"
+msgid "Current version is already the latest."
+msgstr "이미 최신버전을 사용하시고 있습니다"
+
+msgctxt "#1004"
+msgid "Downloading new version files, please wait..."
+msgstr "업데이트 파일 다운로드중, 잠시만 기다려 주십시오... "
+
+msgctxt "#1005"
+msgid "Download completed, now install? "
+msgstr "다운로드되었습니다. 즉시로 설치하시겠습니까？"
+
+msgctxt "#1006"
+msgid "Update failed, please check your network connection.\r\nYou can download new software straightforwardly on: "
+msgstr "업데이트가 실패되었습니다. 네트워크 연결을 확인해 주십시오. \r\n다음 주소에서 새 소프트웨어를 직접 다운로드할 수 있습니다："
+
+msgctxt "#1007"
+msgid "Program is already running!"
+msgstr "프로그램이 이미 실행되었습니다！"
+
+msgctxt "#1008"
+msgid "Service started successfully!"
+msgstr "서버가 성공적으로 실행되었습니다！"
+
+msgctxt "#1009"
+msgid "Checking for updates..."
+msgstr "업데이트 체크중..."
+
+msgctxt "#1010"
+msgid "Service started successfully!"
+msgstr "미디어 라이브러리 갱신중..."
+
+msgctxt "#1011"
+msgid "Service updated unsuccessfully!"
+msgstr "미디어 라이브러리 업데이트가 실패되었습니다！"
+
+msgctxt "#1012"
+msgid "Library updated successfully!"
+msgstr "미디어 라이브러리가 성공적으로 업데이트되었습니다！"
+
+msgctxt "#1013"
+msgid "Website: "
+msgstr "웹사이트："
+
+msgctxt "#1014"
+msgid "Forum: "
+msgstr "포럼："
+
+msgctxt "#1015"
+msgid "Change Log"
+msgstr "변경사항"
+
+msgctxt "#1016"
+msgid "Updater app successfully initiated..."
+msgstr "이미 업데이트 중 입니다..."
+
+msgctxt "#1017"
+msgid "Open the log folder"
+msgstr "로그 디렉토리 열기"
+
+msgctxt "#20358"
+msgid "Season %i"
+msgstr "시즌%i"
+
+msgctxt "#20381"
+msgid "Specials"
+msgstr "특집"
+
+msgctxt "#40001"
+msgid "English"
+msgstr "영어"
+
+msgctxt "#40002"
+msgid "Chinese"
+msgstr "중국어"
+
+msgctxt "#40003"
+msgid "Mandarin"
+msgstr "Mandarin"
+
+msgctxt "#40004"
+msgid "Putonghua"
+msgstr "표준어"
+
+msgctxt "#40005"
+msgid "Yue"
+msgstr "Yue"
+
+msgctxt "#40006"
+msgid "Cantonese"
+msgstr "광동어"
+
+msgctxt "#40007"
+msgid "Wu"
+msgstr "Wu"
+
+msgctxt "#40008"
+msgid "Shanghaiese"
+msgstr "상해"
+
+msgctxt "#40009"
+msgid "Minbei"
+msgstr "Minbei"
+
+msgctxt "#40010"
+msgid "Fuzhou"
+msgstr "복주어어"
+
+msgctxt "#40011"
+msgid "Minnan"
+msgstr "Minnan"
+
+msgctxt "#40012"
+msgid "Hokkien"
+msgstr "복건어"
+
+msgctxt "#40013"
+msgid "Taiwanese"
+msgstr "대만어"
+
+msgctxt "#40014"
+msgid "Spanish"
+msgstr "스페인어"
+
+msgctxt "#40015"
+msgid "Greek"
+msgstr "그리스어"
+
+msgctxt "#40016"
+msgid "Albanian"
+msgstr "알바니아어"
+
+msgctxt "#40017"
+msgid "Arabic"
+msgstr "아랍어"
+
+msgctxt "#40018"
+msgid "French"
+msgstr "프랑스어"
+
+msgctxt "#40019"
+msgid "Portuguese"
+msgstr "포르투갈어"
+
+msgctxt "#40020"
+msgid "Italian"
+msgstr "이탈리아어"
+
+msgctxt "#40021"
+msgid "German"
+msgstr "독일어"
+
+msgctxt "#40022"
+msgid "Armenian"
+msgstr "아르메니아어"
+
+msgctxt "#40023"
+msgid "Yezidi"
+msgstr "예지드파어"
+
+msgctxt "#40024"
+msgid "Russian"
+msgstr "러시아어"
+
+msgctxt "#40025"
+msgid "Slovene"
+msgstr "슬로베니아어"
+
+msgctxt "#40026"
+msgid "Croatian"
+msgstr "크로아티아어"
+
+msgctxt "#40027"
+msgid "Hungarian"
+msgstr "헝가리어"
+
+msgctxt "#40028"
+msgid "Bangla"
+msgstr "벵골어"
+
+msgctxt "#40029"
+msgid "Belorussian"
+msgstr "벨로루시어"
+
+msgctxt "#40030"
+msgid "Dutch"
+msgstr "네덜란드어"
+
+msgctxt "#40031"
+msgid "Mayan"
+msgstr "마야어"
+
+msgctxt "#40032"
+msgid "Malay"
+msgstr "말레이어"
+
+msgctxt "#40033"
+msgid "Bulgarian"
+msgstr "불가리아어"
+
+msgctxt "#40034"
+msgid "Kirund"
+msgstr "키룬드어"
+
+msgctxt "#40035"
+msgid "Khmer"
+msgstr "크메르어"
+
+msgctxt "#40036"
+msgid "Czech"
+msgstr "체코어"
+
+msgctxt "#40037"
+msgid "Danish"
+msgstr "덴마크어"
+
+msgctxt "#40038"
+msgid "Tetum"
+msgstr "테툼어"
+
+msgctxt "#40039"
+msgid "Amharic"
+msgstr "암하라어"
+
+msgctxt "#40040"
+msgid "Finnish"
+msgstr "핀란드어"
+
+msgctxt "#40041"
+msgid "Georgian"
+msgstr "조지아어"
+
+msgctxt "#40042"
+msgid "Creole"
+msgstr "크리올어"
+
+msgctxt "#40043"
+msgid "Magyar"
+msgstr "마자르어"
+
+msgctxt "#40044"
+msgid "Hungarian"
+msgstr "헝가리어"
+
+msgctxt "#40045"
+msgid "Icelandic"
+msgstr "아이슬란드어"
+
+msgctxt "#40046"
+msgid "Hindi"
+msgstr "힌디어"
+
+msgctxt "#40047"
+msgid "Bahasa"
+msgstr "인도네시아어"
+
+msgctxt "#40048"
+msgid "Persian"
+msgstr "페르시아"
+
+msgctxt "#40049"
+msgid "Hebrew"
+msgstr "히브리어"
+
+msgctxt "#40050"
+msgid "Japanese"
+msgstr "일본어"
+
+msgctxt "#40051"
+msgid "Korean"
+msgstr "한국어"
+
+msgctxt "#40052"
+msgid "Albanian"
+msgstr "알바니아어"
+
+msgctxt "#40053"
+msgid "Kyrgyz"
+msgstr "키르기즈어"
+
+msgctxt "#40054"
+msgid "Lao"
+msgstr "라오어"
+
+msgctxt "#40055"
+msgid "Lithuanian"
+msgstr "리투아니아어"
+
+msgctxt "#40056"
+msgid "Malagasy"
+msgstr "마다가스카르어"
+
+msgctxt "#40057"
+msgid "Macedonian"
+msgstr "마케도니아어"
+
+msgctxt "#40058"
+msgid "Chichewa"
+msgstr "니안자어"
+
+msgctxt "#40059"
+msgid "Bahasa"
+msgstr "인도네시아어"
+
+msgctxt "#40060"
+msgid "Melayu"
+msgstr "멜라어"
+
+msgctxt "#40061"
+msgid "Maldivian"
+msgstr "몰디브어"
+
+msgctxt "#40062"
+msgid "Mongolian"
+msgstr "몽골어"
+
+msgctxt "#40063"
+msgid "Serbian"
+msgstr "세르비아어"
+
+msgctxt "#40064"
+msgid "Burmese"
+msgstr "버마어"
+
+msgctxt "#40065"
+msgid "Urdu"
+msgstr "우르두어"
+
+msgctxt "#40066"
+msgid "Filipino"
+msgstr "필리핀어"
+
+msgctxt "#40067"
+msgid "Polish"
+msgstr "폴란드어"
+
+msgctxt "#40068"
+msgid "Romanian"
+msgstr "루마니아어"
+
+msgctxt "#40069"
+msgid "Slovak"
+msgstr "슬로바키아어"
+
+msgctxt "#40070"
+msgid "Slovenian"
+msgstr "슬로베니아어"
+
+msgctxt "#40071"
+msgid "Somali"
+msgstr "소말리어"
+
+msgctxt "#40072"
+msgid "Swedish"
+msgstr "스웨덴어"
+
+msgctxt "#40073"
+msgid "Undefine"
+msgstr "정의되지 않음"
+
+msgctxt "#40074"
+msgid "zho"
+msgstr "중국어"
+
+msgctxt "#40075"
+msgid "eng"
+msgstr "영어"
+
+msgctxt "#40076"
+msgid "und"
+msgstr "정의되지 않음"
+
